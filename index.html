@@ -6,17 +6,16 @@
   <meta name="msvalidate.01" content="9746EBC24D97EC63C2F2D65168C0FEEB" />
   <meta name="google-site-verification" content="google250b3dec21245d41" />
   <meta name="google-site-verification" content="N_8VY2MSs_YDmIpDdEFAv3bbF-B_oxv2oSoy-DRs6MI" />
-  <title>BOOMERVISION DIAGNOSMATIC 3000 - CARLIN EDITION</title>
+  <title>BOOMERVISION DIAGNOSTIC GRID - CARLIN EDITION</title>
   <style>
     :root { 
       --tv-casing: #2b1d0c; 
       --tv-bezel: #1a1107;
-      --screen-bg: #0f140d; 
+      --screen-bg: #0b0f0a; 
       --crt-green: #39ff14; 
       --crt-amber: #ffb700; 
       --crt-red: #ff2a2a; 
       --crt-cyan: #00f5ff;
-      --tv-dial-metal: #7a7a7a;
       --subtext: #8a9985; 
     } 
 
@@ -25,7 +24,7 @@
       background-color: #050505; 
       color: var(--crt-green); 
       margin: 0; 
-      padding: 10px; 
+      padding: 8px; 
       display: flex; 
       flex-direction: column; 
       align-items: center; 
@@ -35,30 +34,29 @@
     /* Retro TV Cabinet Wrapper */
     .tv-cabinet {
       width: 100%; 
-      max-width: 520px; 
+      max-width: 500px; 
       background: radial-gradient(circle at center, #3d2912 0%, #170d04 100%);
-      border: 12px solid var(--tv-casing);
-      border-radius: 28px;
-      padding: 16px;
-      box-shadow: 0 0 50px rgba(0,0,0,0.9), inset 0 0 15px rgba(0,0,0,0.8);
+      border: 10px solid var(--tv-casing);
+      border-radius: 24px;
+      padding: 12px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.9), inset 0 0 15px rgba(0,0,0,0.8);
       position: relative;
     }
 
-    /* Wood Grain Accent Overlay */
     .tv-cabinet::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       border: 2px solid #54391a;
-      border-radius: 16px;
+      border-radius: 14px;
       pointer-events: none;
     }
 
     /* Outer CRT Screen Frame */
     .crt-bezel {
       background: var(--tv-bezel);
-      border-radius: 20px;
-      padding: 12px;
+      border-radius: 16px;
+      padding: 10px;
       box-shadow: inset 0 0 20px #000;
       position: relative;
     }
@@ -66,11 +64,11 @@
     /* Screen with CRT Scanlines & Curved Glass Glow */
     .crt-screen {
       background-color: var(--screen-bg);
-      border-radius: 15px;
-      padding: 12px;
+      border-radius: 12px;
+      padding: 8px;
       position: relative;
       overflow: hidden;
-      box-shadow: inset 0 0 40px rgba(0,0,0,0.9), 0 0 15px rgba(57, 255, 20, 0.2);
+      box-shadow: inset 0 0 35px rgba(0,0,0,0.9), 0 0 12px rgba(57, 255, 20, 0.2);
       border: 3px solid #1c2b18;
     }
 
@@ -80,44 +78,158 @@
       display: block;
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
-      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%);
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
       background-size: 100% 4px;
       z-index: 10;
       pointer-events: none;
     }
 
-    /* Static Static Noise Overlay */
+    /* Static Noise Overlay */
     .static-overlay {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), rgba(0,0,0,0.2) 2px);
+      background: repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), rgba(0,0,0,0.25) 2px);
       opacity: 0;
       pointer-events: none;
       z-index: 9;
       transition: opacity 0.1s ease;
     }
-    .static-overlay.active { opacity: 0.4; }
+    .static-overlay.active { opacity: 0.5; }
 
-    header { text-align: center; margin-bottom: 8px; border-bottom: 2px dashed var(--crt-green); padding-bottom: 6px; } 
-    h1 { font-size: 1.1rem; font-weight: 900; color: var(--crt-amber); margin: 0; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 6px var(--crt-amber); } 
+    header { text-align: center; margin-bottom: 6px; border-bottom: 2px dashed var(--crt-green); padding-bottom: 4px; } 
+    h1 { font-size: 1rem; font-weight: 900; color: var(--crt-amber); margin: 0; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 6px var(--crt-amber); } 
 
     .ch-display {
       font-size: 0.75rem;
       color: var(--crt-cyan);
       display: flex;
       justify-content: space-between;
-      margin-top: 4px;
+      margin-top: 2px;
       font-weight: bold;
     }
 
-    /* Control Panel (Dials & Switches below screen) */
+    /* Interactive Diagnostic Grid */
+    .tv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      width: 100%;
+      margin: 8px 0;
+    }
+
+    /* 3D Wheel-of-Fortune Style Flip Card */
+    .tile-container {
+      perspective: 800px;
+      height: 95px;
+    }
+
+    .tile-card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .tile-card.spin-flip {
+      transform: rotateY(180deg);
+    }
+
+    .tile-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
+    }
+
+    /* Front TV-Style Graphic */
+    .tile-front {
+      background: linear-gradient(135deg, #151d13 0%, #080c07 100%);
+      border: 2px solid var(--crt-green);
+    }
+
+    /* Back Revealed Category Result Face */
+    .tile-back {
+      transform: rotateY(180deg);
+      background: #0d120a;
+      border: 2px solid var(--crt-amber);
+      justify-content: center;
+      text-align: center;
+    }
+
+    .tile-back.cat-stairmaster { border-color: var(--crt-red); }
+    .tile-back.cat-survivor { border-color: var(--crt-green); }
+    .tile-back.cat-automaton { border-color: var(--crt-amber); }
+
+    .tile-title {
+      font-size: 0.55rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    /* Miniature Channel Dial on Front of Tile */
+    .mini-dial {
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle, #8a8a8a 0%, #333 70%);
+      border: 2px solid #1a1a1a;
+      border-radius: 50%;
+      position: relative;
+      margin: 2px 0;
+    }
+    .mini-dial::after {
+      content: "";
+      position: absolute;
+      top: 1px; left: 50%;
+      transform: translateX(-50%);
+      width: 2px; height: 6px;
+      background: #fff;
+    }
+
+    .tile-controls {
+      display: flex;
+      width: 100%;
+      gap: 3px;
+    }
+
+    .tile-btn {
+      flex: 1;
+      font-size: 0.55rem;
+      font-weight: 900;
+      padding: 3px 0;
+      border: 1px solid var(--crt-green);
+      background: #000;
+      color: var(--crt-green);
+      cursor: pointer;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    .tile-btn-no {
+      border-color: var(--crt-red);
+      color: var(--crt-red);
+    }
+
+    .tile-btn:hover { background: var(--crt-green); color: #000; }
+    .tile-btn-no:hover { background: var(--crt-red); color: #fff; }
+
+    /* Controls Panel under Cabinet */
     .tv-controls-panel {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin-top: 14px;
+      margin-top: 10px;
       background: #120b04;
-      padding: 10px;
+      padding: 8px;
       border-radius: 8px;
       border: 2px solid #3d2912;
     }
@@ -126,107 +238,42 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
+      cursor: pointer;
     }
 
     .dial-label { font-size: 0.55rem; color: var(--crt-amber); font-weight: bold; text-transform: uppercase; }
 
     .rotary-dial {
-      width: 44px;
-      height: 44px;
+      width: 38px;
+      height: 38px;
       background: radial-gradient(circle, #8a8a8a 0%, #333 70%);
       border: 3px solid #1a1a1a;
       border-radius: 50%;
       position: relative;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.8);
+      box-shadow: 0 3px 5px rgba(0,0,0,0.8);
       transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .rotary-dial::after {
       content: "";
       position: absolute;
-      top: 4px; left: 50%;
+      top: 3px; left: 50%;
       transform: translateX(-50%);
-      width: 4px; height: 14px;
+      width: 3px; height: 12px;
       background: #fff;
       border-radius: 2px;
     }
 
-    /* Diagnostic Container */
-    .diagnostic-card {
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      z-index: 11;
-    }
-
-    .question-box {
-      font-size: 0.85rem;
-      line-height: 1.3;
-      color: #fff;
-      text-shadow: 0 0 4px var(--crt-green);
-      margin-bottom: 10px;
-      min-height: 54px;
-    }
-
-    .context-box {
-      font-size: 0.65rem;
-      color: var(--crt-amber);
-      background: rgba(0,0,0,0.4);
-      border-left: 3px solid var(--crt-amber);
-      padding: 6px;
-      margin-bottom: 12px;
-    }
-
-    .diag-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .diag-btn {
-      background: #000;
-      border: 2px solid var(--crt-green);
-      color: var(--crt-green);
-      padding: 10px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-      text-transform: uppercase;
-      box-shadow: 0 0 6px rgba(57, 255, 20, 0.3);
-      transition: all 0.1s ease;
-    }
-
-    .diag-btn:hover {
-      background: var(--crt-green);
-      color: #000;
-    }
-
-    .diag-btn-no {
-      border-color: var(--crt-red);
-      color: var(--crt-red);
-      box-shadow: 0 0 6px rgba(255, 42, 42, 0.3);
-    }
-
-    .diag-btn-no:hover {
-      background: var(--crt-red);
-      color: #fff;
-    }
-
     /* Category Diagnostic Meter */
     .category-tracker {
-      margin-top: 10px;
       background: rgba(0,0,0,0.6);
       border: 1px solid #1c2b18;
       padding: 6px;
       border-radius: 4px;
     }
 
-    .tracker-title { font-size: 0.58rem; color: var(--subtext); margin-bottom: 4px; text-transform: uppercase; }
+    .tracker-title { font-size: 0.55rem; color: var(--subtext); margin-bottom: 4px; text-transform: uppercase; text-align: center; }
     
     .category-bars {
       display: flex;
@@ -238,7 +285,7 @@
       display: flex;
       align-items: center;
       font-size: 0.55rem;
-      gap: 6px;
+      gap: 4px;
     }
 
     .cat-name { width: 110px; color: #fff; }
@@ -255,11 +302,10 @@
     .cat-bar-fill {
       height: 100%;
       width: 0%;
-      background: var(--crt-green);
       transition: width 0.3s ease;
     }
 
-    /* Modal for Results */
+    /* Results Modal */
     .modal { 
       display: none; 
       position: fixed; 
@@ -286,9 +332,9 @@
       color: #000;
       font-weight: 900;
       border: none;
-      padding: 10px 16px;
+      padding: 8px 14px;
       cursor: pointer;
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 0.75rem;
       text-transform: uppercase;
       border-radius: 4px;
@@ -303,25 +349,17 @@
         <div class="static-overlay" id="staticOverlay"></div>
 
         <header>
-          <h1>📺 BOOMERVISION DIAGNOSTIC 📺</h1>
+          <h1>📺 BOOMERVISION DIAGNOSTIC GRID 📺</h1>
           <div class="ch-display">
             <span>CH: <span id="chNum">03</span></span>
-            <span id="diagProgress">TEST 1/10</span>
+            <span id="diagProgress">COMPLETED: 0/9</span>
           </div>
         </header>
 
-        <div class="diagnostic-card" id="diagCard">
-          <div>
-            <div class="question-box" id="qText">Loading CRT Diagnostic...</div>
-            <div class="context-box" id="qContext">Carlin's generational telemetry engine initialized.</div>
-          </div>
+        <!-- 3x3 TV Wheel-Style Diagnostic Grid -->
+        <div class="tv-grid" id="tvGrid"></div>
 
-          <div class="diag-options">
-            <button class="diag-btn" onclick="processAnswer(true)">YES (AFFIRM)</button>
-            <button class="diag-btn diag-btn-no" onclick="processAnswer(false)">NO (REJECT)</button>
-          </div>
-        </div>
-
+        <!-- Real-Time Category Breakdown -->
         <div class="category-tracker">
           <div class="tracker-title">REAL-TIME CATEGORY DIAGNOSIS</div>
           <div class="category-bars">
@@ -345,17 +383,17 @@
 
     <!-- Retro Mechanical Control Panel -->
     <div class="tv-controls-panel">
-      <div class="dial-wrapper" onclick="turnDial()">
-        <div class="rotary-dial" id="channelDial"></div>
+      <div class="dial-wrapper" onclick="turnMainDial()">
+        <div class="rotary-dial" id="mainDial"></div>
         <span class="dial-label">TUNER MOTOR</span>
       </div>
-      <div style="font-size: 0.6rem; color: var(--subtext); text-align: center;">
+      <div style="font-size: 0.58rem; color: var(--subtext); text-align: center;">
         <div>MOTOR SYNCHRONIZED</div>
         <div style="color: var(--crt-cyan); font-weight: bold; margin-top:2px;">ANALOG SPEECH SYNTH</div>
       </div>
-      <div class="dial-wrapper" onclick="triggerStaticEffect()">
-        <div class="rotary-dial" style="transform: rotate(45deg);"></div>
-        <span class="dial-label">STATIC PULSE</span>
+      <div class="dial-wrapper" onclick="resetGrid()">
+        <div class="rotary-dial" style="transform: rotate(90deg);"></div>
+        <span class="dial-label">RESET TUNER</span>
       </div>
     </div>
   </div>
@@ -364,14 +402,13 @@
   <div class="modal" id="resultModal">
     <div class="modal-content">
       <h2 id="resTitle" style="color: var(--crt-amber); margin-top: 0;">DIAGNOSTIC COMPLETE</h2>
-      <p id="resDesc" style="font-size: 0.8rem; color: #fff; line-height: 1.4;"></p>
-      <div id="resStats" style="font-size: 0.7rem; color: var(--crt-cyan); text-align: left; background: #000; padding: 8px; border: 1px dashed var(--crt-cyan); margin-top: 8px;"></div>
-      <button class="btn-action" onclick="resetDiagnostic()">RE-TUNE TELEVISION</button>
+      <p id="resDesc" style="font-size: 0.78rem; color: #fff; line-height: 1.4;"></p>
+      <div id="resStats" style="font-size: 0.68rem; color: var(--crt-cyan); text-align: left; background: #000; padding: 8px; border: 1px dashed var(--crt-cyan); margin-top: 8px;"></div>
+      <button class="btn-action" onclick="resetGrid()">RE-TUNE ALL CHANNELS</button>
     </div>
   </div>
 
   <script>
-    // Audio Context Setup
     let audioCtx = null;
 
     function initAudio() {
@@ -383,43 +420,43 @@
       }
     }
 
-    // Heavy Mechanical Channel Changer Sound (Motor + Loud Metal Clunk)
+    // Heavy Motorized Dial Clunk Sound
     function playDialMechanicalSound() {
       initAudio();
       if (!audioCtx) return;
 
       const now = audioCtx.currentTime;
 
-      // 1. Motor Whine / Humming Buzz
+      // Motor Hum
       const motorOsc = audioCtx.createOscillator();
       const motorGain = audioCtx.createGain();
       motorOsc.type = 'sawtooth';
-      motorOsc.frequency.setValueAtTime(80, now);
-      motorOsc.frequency.linearRampToValueAtTime(140, now + 0.12);
-      motorOsc.frequency.linearRampToValueAtTime(40, now + 0.25);
+      motorOsc.frequency.setValueAtTime(90, now);
+      motorOsc.frequency.linearRampToValueAtTime(160, now + 0.15);
+      motorOsc.frequency.linearRampToValueAtTime(50, now + 0.3);
       
-      motorGain.gain.setValueAtTime(0.2, now);
-      motorGain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+      motorGain.gain.setValueAtTime(0.25, now);
+      motorGain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
 
       motorOsc.connect(motorGain);
       motorGain.connect(audioCtx.destination);
       motorOsc.start(now);
-      motorOsc.stop(now + 0.25);
+      motorOsc.stop(now + 0.3);
 
-      // 2. Heavy Metallic Gear Clunk
+      // Metallic Click / Clunk
       const clunkOsc = audioCtx.createOscillator();
       const clunkGain = audioCtx.createGain();
       clunkOsc.type = 'square';
-      clunkOsc.frequency.setValueAtTime(220, now + 0.1);
-      clunkOsc.frequency.exponentialRampToValueAtTime(40, now + 0.22);
+      clunkOsc.frequency.setValueAtTime(240, now + 0.12);
+      clunkOsc.frequency.exponentialRampToValueAtTime(45, now + 0.28);
 
-      clunkGain.gain.setValueAtTime(0.4, now + 0.1);
-      clunkGain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+      clunkGain.gain.setValueAtTime(0.45, now + 0.12);
+      clunkGain.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
 
       clunkOsc.connect(clunkGain);
       clunkGain.connect(audioCtx.destination);
-      clunkOsc.start(now + 0.1);
-      clunkOsc.stop(now + 0.22);
+      clunkOsc.start(now + 0.12);
+      clunkOsc.stop(now + 0.28);
     }
 
     // Voice Synthesis for Old TV Announce
@@ -428,109 +465,184 @@
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 0.9;
-        utterance.pitch = 0.8; // Lower, older TV broadcaster tone
+        utterance.pitch = 0.8;
         window.speechSynthesis.speak(utterance);
       }
     }
 
-    // Diagnostic Questions Mapping directly into Categories
-    const DIAGNOSTIC_QUESTIONS = [
+    const GRID_TILES = [
       {
-        q: "1. Did you trade 1960s counterculture idealism for 1980s real estate hoarding?",
-        context: "Carlin: 'They went from Love Is All You Need to Whoever Has Most Toys Wins!'",
+        title: "Counterculture Sell-Out",
         yesCat: "stairmaster",
         noCat: "survivor",
-        voiceYes: "Narcissist trait registered!",
-        voiceNo: "Counterculture integrity verified."
+        yesVoice: "Narcissist trait registered!",
+        noVoice: "Counterculture integrity verified.",
+        yesLabel: "STAIRMASTER NARCISSIST",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "2. Do you consume over 4 hours of 24-hour cable news daily?",
-        context: "Boomervision Telemetry: Dictates local paranoia & voting habits.",
+        title: "24/7 Cable TV News",
         yesCat: "automaton",
         noCat: "survivor",
-        voiceYes: "Cable news brainrot detected!",
-        voiceNo: "Unplugged from the tube."
+        yesVoice: "Cable news brainrot detected!",
+        noVoice: "Unplugged from TV.",
+        yesLabel: "CABLE NEWS AUTOMATON",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "3. Do you demand 5 years experience for entry-level jobs you got with a handshake?",
-        context: "Ladder-Pulling Protocol: Escalating barriers for incoming generations.",
+        title: "Handshake Job Myth",
         yesCat: "stairmaster",
         noCat: "survivor",
-        voiceYes: "Ladder pulled upward!",
-        voiceNo: "Fair access preserved."
+        yesVoice: "Ladder pulled upward!",
+        noVoice: "Fair access preserved.",
+        yesLabel: "STAIRMASTER NARCISSIST",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "4. Did you brag about severe discipline as a kid, but spoil your grandkids completely?",
-        context: "Parenting Double Standard: Strict enforcement turned total indulgence.",
+        title: "Parenting Double Standard",
         yesCat: "stairmaster",
         noCat: "survivor",
-        voiceYes: "Hypocrisy quotient elevated!",
-        voiceNo: "Consistent discipline balance."
+        yesVoice: "Hypocrisy quotient elevated!",
+        noVoice: "Consistent balance.",
+        yesLabel: "STAIRMASTER NARCISSIST",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "5. Do you believe your low minimum wage paid for college because you 'worked hard'?",
-        context: "Nostalgic Revisionism: Ignoring 40-year economic shifts.",
+        title: "Nostalgic Revisionism",
         yesCat: "automaton",
         noCat: "survivor",
-        voiceYes: "Revisionist memory confirmed!",
-        voiceNo: "Economic reality acknowledged."
+        yesVoice: "Revisionist memory confirmed!",
+        noVoice: "Economic reality acknowledged.",
+        yesLabel: "CABLE NEWS AUTOMATON",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "6. Do you turn anti-authority values into strict HOA grass-length enforcement?",
-        context: "Carlin: 'Acquired power and immediately started scolding everyone else.'",
+        title: "HOA Lawn Scold",
         yesCat: "stairmaster",
         noCat: "survivor",
-        voiceYes: "HOA citation dispatched!",
-        voiceNo: "Suburban paranoia rejected."
+        yesVoice: "HOA citation dispatched!",
+        noVoice: "Suburban paranoia rejected.",
+        yesLabel: "STAIRMASTER NARCISSIST",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "7. Do you leave the television running continuously for background noise?",
-        context: "Boomervision Signal Lock: Continuous broadcast reliance.",
+        title: "TV Background Noise",
         yesCat: "automaton",
         noCat: "survivor",
-        voiceYes: "Signal lock active!",
-        voiceNo: "Silence tolerated."
+        yesVoice: "Signal lock active!",
+        noVoice: "Silence tolerated.",
+        yesLabel: "CABLE NEWS AUTOMATON",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "8. Do you advocate for public spending cuts while shielding senior tax subsidies?",
-        context: "Gimme It It's Mine Doctrine: Maximum entitlement retention.",
+        title: "Gimme It Entitlement",
         yesCat: "stairmaster",
         noCat: "survivor",
-        voiceYes: "Entitlement locked in!",
-        voiceNo: "Generational equity supported."
+        yesVoice: "Entitlement locked in!",
+        noVoice: "Generational equity supported.",
+        yesLabel: "STAIRMASTER NARCISSIST",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       },
       {
-        q: "9. Did you sell out rock and roll music to serve TV commercial ad campaigns?",
-        context: "Carlin: 'Swapped anti-establishment tunes for Stairmaster commercials.'",
+        title: "Commercialized Rock",
         yesCat: "stairmaster",
         noCat: "survivor",
-        voiceYes: "Commercial sellout confirmed!",
-        voiceNo: "Pure rhythm retained."
-      },
-      {
-        q: "10. Do you get outraged over modern slang while forgetting 1960s hippie lingo?",
-        context: "Linguistic Scold Syndrome: Rejecting new culture while defending old cap.",
-        yesCat: "automaton",
-        noCat: "survivor",
-        voiceYes: "Boomervision scold engaged!",
-        voiceNo: "Slang flexibility active."
+        yesVoice: "Commercial sellout confirmed!",
+        noVoice: "Pure rhythm retained.",
+        yesLabel: "STAIRMASTER NARCISSIST",
+        noLabel: "COUNTERCULTURE SURVIVOR"
       }
     ];
 
-    let currentIndex = 0;
-    let categoryScores = {
-      stairmaster: 0,
-      survivor: 0,
-      automaton: 0
-    };
+    let categoryScores = { stairmaster: 0, survivor: 0, automaton: 0 };
+    let completedCount = 0;
+    let mainDialRotation = 0;
 
-    let dialRotation = 0;
+    function renderTVGrid() {
+      const gridElem = document.getElementById('tvGrid');
+      gridElem.innerHTML = '';
+      completedCount = 0;
 
-    function turnDial() {
-      dialRotation += 36;
-      document.getElementById('channelDial').style.transform = `rotate(${dialRotation}deg)`;
-      playDialMechanicalSound();
+      GRID_TILES.forEach((tile, idx) => {
+        const container = document.createElement('div');
+        container.className = 'tile-container';
+        container.id = `tile-cont-${idx}`;
+
+        container.innerHTML = `
+          <div class="tile-card" id="tile-card-${idx}">
+            <!-- Front Face: TV Graphic with Dial -->
+            <div class="tile-face tile-front">
+              <div class="tile-title">CH 0${idx + 1}: ${tile.title}</div>
+              <div class="mini-dial" id="mini-dial-${idx}"></div>
+              <div class="tile-controls">
+                <button class="tile-btn" onclick="selectTileAnswer(${idx}, true)">YES</button>
+                <button class="tile-btn tile-btn-no" onclick="selectTileAnswer(${idx}, false)">NO</button>
+              </div>
+            </div>
+
+            <!-- Back Face: Wheel of Fortune Flip Result -->
+            <div class="tile-face tile-back" id="tile-back-${idx}">
+              <div style="font-size:0.45rem; color:var(--subtext);">DIAGNOSIS</div>
+              <div class="tile-title" id="tile-res-text-${idx}" style="color:var(--crt-amber); margin: 4px 0;">CATEGORIZED</div>
+              <div style="font-size:0.45rem; color:#fff;" id="tile-res-cat-${idx}">---</div>
+            </div>
+          </div>
+        `;
+        gridElem.appendChild(container);
+      });
+
+      updateTrackerBars();
+    }
+
+    function selectTileAnswer(idx, isYes) {
+      initAudio();
       
+      const card = document.getElementById(`tile-card-${idx}`);
+      if (card.classList.contains('spin-flip')) return; // Already picked
+
+      playDialMechanicalSound();
+      triggerStaticEffect();
+
+      // Rotate local tile dial
+      const miniDial = document.getElementById(`mini-dial-${idx}`);
+      miniDial.style.transform = 'rotate(120deg)';
+
+      const tile = GRID_TILES[idx];
+      const selectedCat = isYes ? tile.yesCat : tile.noCat;
+      const voicePhrase = isYes ? tile.yesVoice : tile.noVoice;
+      const categoryLabel = isYes ? tile.yesLabel : tile.noLabel;
+
+      categoryScores[selectedCat]++;
+      completedCount++;
+
+      // Set Wheel of Fortune flip result
+      const backFace = document.getElementById(`tile-back-${idx}`);
+      const resText = document.getElementById(`tile-res-text-${idx}`);
+      const resCat = document.getElementById(`tile-res-cat-${idx}`);
+
+      backFace.className = `tile-face tile-back cat-${selectedCat}`;
+      resText.innerText = isYes ? "AFFIRMED" : "REJECTED";
+      resCat.innerText = categoryLabel;
+
+      // Spin card like Wheel of Fortune
+      card.classList.add('spin-flip');
+
+      speakTvVoice(voicePhrase);
+
+      document.getElementById('diagProgress').innerText = `COMPLETED: ${completedCount}/9`;
+      updateTrackerBars();
+
+      if (completedCount >= GRID_TILES.length) {
+        setTimeout(showFinalCategory, 1000);
+      }
+    }
+
+    function turnMainDial() {
+      mainDialRotation += 40;
+      document.getElementById('mainDial').style.transform = `rotate(${mainDialRotation}deg)`;
+      playDialMechanicalSound();
+      triggerStaticEffect();
+
       const chElem = document.getElementById('chNum');
       let currentCh = parseInt(chElem.innerText);
       chElem.innerText = (currentCh % 13 + 1).toString().padStart(2, '0');
@@ -542,42 +654,10 @@
       setTimeout(() => overlay.classList.remove('active'), 250);
     }
 
-    function renderQuestion() {
-      if (currentIndex >= DIAGNOSTIC_QUESTIONS.length) {
-        showFinalCategory();
-        return;
-      }
-
-      const q = DIAGNOSTIC_QUESTIONS[currentIndex];
-      document.getElementById('qText').innerText = q.q;
-      document.getElementById('qContext').innerText = q.context;
-      document.getElementById('diagProgress').innerText = `TEST ${currentIndex + 1}/${DIAGNOSTIC_QUESTIONS.length}`;
-
-      updateTrackerBars();
-    }
-
-    function processAnswer(isYes) {
-      initAudio();
-      turnDial();
-      triggerStaticEffect();
-
-      const q = DIAGNOSTIC_QUESTIONS[currentIndex];
-      const selectedCat = isYes ? q.yesCat : q.noCat;
-      const voicePhrase = isYes ? q.voiceYes : q.voiceNo;
-
-      categoryScores[selectedCat]++;
-
-      speakTvVoice(voicePhrase);
-
-      currentIndex++;
-      setTimeout(renderQuestion, 200);
-    }
-
     function updateTrackerBars() {
-      const total = Math.max(currentIndex, 1);
-      document.getElementById('cat1Bar').style.width = ((categoryScores.stairmaster / 10) * 100) + '%';
-      document.getElementById('cat2Bar').style.width = ((categoryScores.survivor / 10) * 100) + '%';
-      document.getElementById('cat3Bar').style.width = ((categoryScores.automaton / 10) * 100) + '%';
+      document.getElementById('cat1Bar').style.width = ((categoryScores.stairmaster / 9) * 100) + '%';
+      document.getElementById('cat2Bar').style.width = ((categoryScores.survivor / 9) * 100) + '%';
+      document.getElementById('cat3Bar').style.width = ((categoryScores.automaton / 9) * 100) + '%';
     }
 
     function showFinalCategory() {
@@ -614,23 +694,23 @@
       }
 
       stats.innerHTML = `
-        STAIRMASTER NARCISSIST SCORE: ${categoryScores.stairmaster}/10<br>
-        CABLE NEWS AUTOMATON SCORE: ${categoryScores.automaton}/10<br>
-        COUNTERCULTURE SURVIVOR SCORE: ${categoryScores.survivor}/10
+        STAIRMASTER NARCISSIST TILES: ${categoryScores.stairmaster}/9<br>
+        CABLE NEWS AUTOMATON TILES: ${categoryScores.automaton}/9<br>
+        COUNTERCULTURE SURVIVOR TILES: ${categoryScores.survivor}/9
       `;
 
       modal.style.display = 'flex';
     }
 
-    function resetDiagnostic() {
-      currentIndex = 0;
+    function resetGrid() {
       categoryScores = { stairmaster: 0, survivor: 0, automaton: 0 };
       document.getElementById('resultModal').style.display = 'none';
-      renderQuestion();
+      document.getElementById('diagProgress').innerText = `COMPLETED: 0/9`;
+      turnMainDial();
+      renderTVGrid();
     }
 
-    // Initialize first question on load
-    document.addEventListener('DOMContentLoaded', renderQuestion);
+    document.addEventListener('DOMContentLoaded', renderTVGrid);
   </script>
 </body>
 </html>
