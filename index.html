@@ -6,428 +6,375 @@
   <meta name="msvalidate.01" content="9746EBC24D97EC63C2F2D65168C0FEEB" />
   <meta name="google-site-verification" content="google250b3dec21245d41" />
   <meta name="google-site-verification" content="N_8VY2MSs_YDmIpDdEFAv3bbF-B_oxv2oSoy-DRs6MI" />
-  <title>BOOMER LINGO BINGO MAXXING - CARLIN EDITION</title>
+  <title>BOOMERVISION DIAGNOSMATIC 3000 - CARLIN EDITION</title>
   <style>
     :root { 
-      --bg: #090a0f; 
-      --card-bg: #131722; 
-      --alt-card-bg: #1c2233;
-      --border: #2a344d; 
-      --boomer-gold: #ffb700; 
-      --boomer-red: #ff2a2a; 
-      --lawn-green: #39ff14; 
-      --lead-cyan: #00f5ff;
-      --text: #ffffff; 
-      --subtext: #94a3b8; 
+      --tv-casing: #2b1d0c; 
+      --tv-bezel: #1a1107;
+      --screen-bg: #0f140d; 
+      --crt-green: #39ff14; 
+      --crt-amber: #ffb700; 
+      --crt-red: #ff2a2a; 
+      --crt-cyan: #00f5ff;
+      --tv-dial-metal: #7a7a7a;
+      --subtext: #8a9985; 
     } 
 
-    * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; } 
-    body { background-color: var(--bg); color: var(--text); margin: 0; padding: 6px; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; padding-bottom: 20px; } 
-
-    .app-container {
-      width: 100%; max-width: 480px; display: flex; flex-direction: column; align-items: center;
-      border: 3px solid var(--boomer-gold); padding: 8px; border-radius: 12px; position: relative;
-      transition: background-color 0.4s ease, border-color 0.4s ease;
-      box-shadow: 0 0 20px rgba(255, 183, 0, 0.3);
-    }
-
-    body.gold-glow { background-color: #1a1505; }
-    .app-container.gold-border { border-color: var(--boomer-gold) !important; box-shadow: 0 0 25px var(--boomer-gold); }
-    .app-container.maxed-red { border-color: var(--boomer-red) !important; box-shadow: 0 0 25px var(--boomer-red); }
-
-    @keyframes boomerRageShake {
-      0% { transform: translate(0, 0); background-color: var(--boomer-red); }
-      20% { transform: translate(-8px, 6px); }
-      40% { transform: translate(8px, -6px); background-color: #500000; }
-      60% { transform: translate(-5px, -3px); }
-      80% { transform: translate(5px, 5px); }
-      100% { transform: translate(0, 0); background-color: var(--bg); }
-    }
-    body.ragie-shake { animation: boomerRageShake 0.4s ease-in-out; }
-
-    header { text-align: center; margin-bottom: 6px; border-bottom: 2px solid var(--boomer-gold); padding-bottom: 4px; width: 100%; } 
-    h1 { font-size: 1.15rem; font-weight: 900; color: var(--boomer-gold); margin: 0; text-transform: uppercase; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(255, 183, 0, 0.5); } 
-
-    .response-banner { 
-      width: 100%; background: #191409; border: 2px solid var(--boomer-gold); border-radius: 6px; 
-      padding: 6px 10px; margin-bottom: 6px; display: none; align-items: center; gap: 8px; 
-      box-shadow: 0 0 10px rgba(255, 183, 0, 0.2);
-    } 
-    .response-banner.show { display: flex; } 
-
-    .meter-card { background: var(--card-bg); border: 1px solid var(--border); padding: 6px 10px; border-radius: 6px; width: 100%; text-align: center; margin-bottom: 6px; } 
-    .meter-header { display: flex; justify-content: space-between; font-size: 0.65rem; font-weight: 900; margin-bottom: 3px; } 
-    
-    .centered-meter-bg { background: #020305; height: 16px; border-radius: 8px; border: 1px solid var(--border); position: relative; overflow: hidden; margin-bottom: 4px; } 
-    .meter-center-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #ffffff; z-index: 5; }
-    .meter-bar-left { position: absolute; top: 0; right: 50%; height: 100%; width: 0%; background: var(--lawn-green); transition: width 0.3s ease; box-shadow: 0 0 10px var(--lawn-green); }
-    .meter-bar-right { position: absolute; top: 0; left: 50%; height: 100%; width: 0%; background: var(--boomer-gold); transition: width 0.3s ease; box-shadow: 0 0 10px var(--boomer-gold); }
-    .rage-bar-fill { position: absolute; top: 0; left: 0; height: 100%; width: 0%; background: linear-gradient(90deg, var(--lead-cyan), var(--boomer-red)); transition: width 0.3s ease; }
-
-    .docket-card { background: var(--card-bg); border: 1px solid var(--border); padding: 8px 10px; border-radius: 6px; width: 100%; margin-bottom: 6px; } 
-    .boomer-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: #020305; padding: 4px; border-radius: 4px; font-size: 0.58rem; text-align: center; }
-    .stat-box { display: flex; flex-direction: column; }
-    .stat-title { color: var(--subtext); font-size: 0.52rem; text-transform: uppercase; }
-    .stat-val { color: var(--boomer-gold); font-weight: 900; }
-
-    .bingo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; width: 100%; aspect-ratio: 1; margin-bottom: 6px; } 
-    .cell { 
-      background: var(--card-bg); 
-      border: 1px solid var(--border); 
-      font-size: 0.52rem; 
-      font-weight: 700; 
-      color: #ffffff; 
+    * { box-sizing: border-box; font-family: "Courier New", Courier, monospace; } 
+    body { 
+      background-color: #050505; 
+      color: var(--crt-green); 
+      margin: 0; 
+      padding: 10px; 
       display: flex; 
       flex-direction: column; 
       align-items: center; 
-      justify-content: space-between; 
-      text-align: center; 
-      padding: 4px 2px 2px 2px; 
-      border-radius: 4px; 
-      position: relative;
+      min-height: 100vh;
     } 
-    .cell.alt-tile { background: var(--alt-card-bg); }
-    .cell.evaluated-correct { background: rgba(255, 42, 42, 0.35) !important; border: 1px solid var(--boomer-red) !important; } 
-    .cell.evaluated-wrong { background: rgba(255, 183, 0, 0.35) !important; border: 1px solid var(--boomer-gold) !important; } 
-    
-    .cell-icon { font-size: 1.35rem; margin-bottom: 1px; }
-    .cell-title { margin-top: 2px; line-height: 1.1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-variant: small-caps; }
 
-    .tf-controls { display: flex; width: 100%; gap: 2px; margin-top: 2px; }
-    .tf-btn { 
-      flex: 1; 
-      font-size: 0.5rem; 
-      font-weight: 900; 
-      padding: 3px 0; 
-      border-radius: 2px; 
-      border: none; 
-      cursor: pointer; 
-      color: #000; 
-      text-transform: uppercase; 
+    /* Retro TV Cabinet Wrapper */
+    .tv-cabinet {
+      width: 100%; 
+      max-width: 520px; 
+      background: radial-gradient(circle at center, #3d2912 0%, #170d04 100%);
+      border: 12px solid var(--tv-casing);
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: 0 0 50px rgba(0,0,0,0.9), inset 0 0 15px rgba(0,0,0,0.8);
+      position: relative;
     }
-    .tf-btn-f { background: var(--boomer-red); color: #fff; }
-    .tf-btn-t { background: var(--boomer-gold); }
 
-    .quiz-card { background: var(--card-bg); border: 1px solid var(--border); padding: 8px; border-radius: 6px; width: 100%; margin-bottom: 6px; } 
-    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px; } 
-    .quiz-options button { width: 100%; font-size: 0.62rem; padding: 10px 6px; font-weight: 900; border: none; border-radius: 6px; cursor: pointer; text-transform: uppercase; }
-
-    .btn-quiz-yellow { background: var(--boomer-gold); color: #000; box-shadow: 0 0 8px rgba(255, 183, 0, 0.4); }
-
-    .game-center-panel { background: var(--card-bg); border: 1px solid var(--lead-cyan); padding: 8px; border-radius: 6px; width: 100%; margin-top: 4px; }
-    .control-row { display: flex; gap: 6px; margin-bottom: 6px; }
-    .control-row:last-child { margin-bottom: 0; }
-    
-    .btn-action { 
-      font-weight: 900; 
-      font-size: 0.65rem; 
-      padding: 8px 4px; 
-      border: none; 
-      cursor: pointer; 
-      border-radius: 6px; 
-      text-transform: uppercase; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      gap: 4px;
-      text-decoration: none;
-      flex: 1;
+    /* Wood Grain Accent Overlay */
+    .tv-cabinet::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 2px solid #54391a;
+      border-radius: 16px;
+      pointer-events: none;
     }
-    .btn-pink-solid { background: var(--boomer-gold); color: #000; }
-    .btn-green-solid { background: var(--lawn-green); color: #000; }
-    .btn-cyan-solid { background: var(--lead-cyan); color: #000; }
-    .btn-red-solid { background: var(--boomer-red); color: #fff; }
 
-    .bottom-status-bar {
+    /* Outer CRT Screen Frame */
+    .crt-bezel {
+      background: var(--tv-bezel);
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: inset 0 0 20px #000;
+      position: relative;
+    }
+
+    /* Screen with CRT Scanlines & Curved Glass Glow */
+    .crt-screen {
+      background-color: var(--screen-bg);
+      border-radius: 15px;
+      padding: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.9), 0 0 15px rgba(57, 255, 20, 0.2);
+      border: 3px solid #1c2b18;
+    }
+
+    /* Scanline effect */
+    .crt-screen::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%);
+      background-size: 100% 4px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* Static Static Noise Overlay */
+    .static-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05), rgba(0,0,0,0.2) 2px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9;
+      transition: opacity 0.1s ease;
+    }
+    .static-overlay.active { opacity: 0.4; }
+
+    header { text-align: center; margin-bottom: 8px; border-bottom: 2px dashed var(--crt-green); padding-bottom: 6px; } 
+    h1 { font-size: 1.1rem; font-weight: 900; color: var(--crt-amber); margin: 0; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 6px var(--crt-amber); } 
+
+    .ch-display {
+      font-size: 0.75rem;
+      color: var(--crt-cyan);
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      background: #020305;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 6px 8px;
-      margin-top: 6px;
-      font-size: 0.6rem;
-      font-weight: 800;
+      margin-top: 4px;
+      font-weight: bold;
     }
-    .bottom-status-left { color: var(--subtext); display: flex; align-items: center; gap: 4px; }
-    .bottom-status-left span { color: var(--lead-cyan); }
-    .bottom-status-right { display: flex; align-items: center; gap: 6px; }
-    .btn-status-link { background: transparent; border: none; color: var(--lead-cyan); cursor: pointer; font-size: 0.6rem; font-weight: 800; padding: 0; text-decoration: none; }
-    .btn-status-box { background: #1a1d29; border: 1px solid var(--border); color: #fff; padding: 3px 6px; border-radius: 4px; font-size: 0.55rem; font-weight: 800; cursor: pointer; text-transform: uppercase; }
 
-    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.94); justify-content: center; align-items: center; z-index: 1000; } 
-    .modal-content { background: var(--card-bg); border: 3px solid var(--boomer-gold); padding: 16px; text-align: center; border-radius: 8px; max-width: 440px; width: 92%; max-height: 90vh; overflow-y: auto; box-shadow: 0 0 30px rgba(255, 183, 0, 0.4); } 
-    .modal-content.boomer-modal-border { border-color: var(--boomer-red); box-shadow: 0 0 30px rgba(255, 42, 42, 0.4); }
-    .modal-content.rizz-modal-border { border-color: var(--lawn-green); box-shadow: 0 0 30px rgba(57, 255, 20, 0.4); }
-    .win-stat-row { display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 800; margin-bottom: 4px; }
-    .modal-img { width: 100%; max-width: 200px; height: auto; border-radius: 6px; border: 2px solid var(--boomer-gold); margin: 8px auto; display: block; }
-    .modal-img.red-border { border-color: var(--boomer-red); }
-    .modal-img.green-border { border-color: var(--lawn-green); }
+    /* Control Panel (Dials & Switches below screen) */
+    .tv-controls-panel {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 14px;
+      background: #120b04;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #3d2912;
+    }
 
-    .qr-container { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
-    .qr-card { background: #090a0f; border: 1px solid var(--border); border-radius: 6px; padding: 10px; display: flex; flex-direction: column; align-items: center; }
-    .qr-card img { width: 100%; max-width: 220px; height: auto; border-radius: 6px; background: #fff; padding: 4px; }
-    .qr-title { color: var(--boomer-gold); font-size: 0.75rem; font-weight: 900; margin: 6px 0 2px 0; }
-    .qr-address { font-size: 0.6rem; word-break: break-all; color: var(--subtext); font-family: monospace; background: #000; padding: 4px; border-radius: 4px; width: 100%; user-select: all; -webkit-user-select: all; cursor: pointer; }
+    .dial-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
 
-    .copy-btn { width: 100%; margin-top: 6px; background: #1a1d29; color: var(--boomer-gold); border: 1px solid var(--boomer-gold); padding: 4px 8px; font-size: 0.65rem; font-weight: 800; border-radius: 4px; cursor: pointer; }
-    .copy-btn:hover { background: var(--boomer-gold); color: #000; }
+    .dial-label { font-size: 0.55rem; color: var(--crt-amber); font-weight: bold; text-transform: uppercase; }
 
-    footer.copyright-notice { margin-top: 10px; font-size: 0.55rem; color: var(--subtext); text-align: center; }
+    .rotary-dial {
+      width: 44px;
+      height: 44px;
+      background: radial-gradient(circle, #8a8a8a 0%, #333 70%);
+      border: 3px solid #1a1a1a;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.8);
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .rotary-dial::after {
+      content: "";
+      position: absolute;
+      top: 4px; left: 50%;
+      transform: translateX(-50%);
+      width: 4px; height: 14px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    /* Diagnostic Container */
+    .diagnostic-card {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 11;
+    }
+
+    .question-box {
+      font-size: 0.85rem;
+      line-height: 1.3;
+      color: #fff;
+      text-shadow: 0 0 4px var(--crt-green);
+      margin-bottom: 10px;
+      min-height: 54px;
+    }
+
+    .context-box {
+      font-size: 0.65rem;
+      color: var(--crt-amber);
+      background: rgba(0,0,0,0.4);
+      border-left: 3px solid var(--crt-amber);
+      padding: 6px;
+      margin-bottom: 12px;
+    }
+
+    .diag-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .diag-btn {
+      background: #000;
+      border: 2px solid var(--crt-green);
+      color: var(--crt-green);
+      padding: 10px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: 0 0 6px rgba(57, 255, 20, 0.3);
+      transition: all 0.1s ease;
+    }
+
+    .diag-btn:hover {
+      background: var(--crt-green);
+      color: #000;
+    }
+
+    .diag-btn-no {
+      border-color: var(--crt-red);
+      color: var(--crt-red);
+      box-shadow: 0 0 6px rgba(255, 42, 42, 0.3);
+    }
+
+    .diag-btn-no:hover {
+      background: var(--crt-red);
+      color: #fff;
+    }
+
+    /* Category Diagnostic Meter */
+    .category-tracker {
+      margin-top: 10px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #1c2b18;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .tracker-title { font-size: 0.58rem; color: var(--subtext); margin-bottom: 4px; text-transform: uppercase; }
+    
+    .category-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .cat-row {
+      display: flex;
+      align-items: center;
+      font-size: 0.55rem;
+      gap: 6px;
+    }
+
+    .cat-name { width: 110px; color: #fff; }
+
+    .cat-bar-bg {
+      flex: 1;
+      height: 8px;
+      background: #000;
+      border: 1px solid #333;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .cat-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--crt-green);
+      transition: width 0.3s ease;
+    }
+
+    /* Modal for Results */
+    .modal { 
+      display: none; 
+      position: fixed; 
+      top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(0,0,0,0.95); 
+      justify-content: center; 
+      align-items: center; 
+      z-index: 1000; 
+    } 
+
+    .modal-content { 
+      background: #0d120a; 
+      border: 4px solid var(--crt-amber); 
+      padding: 16px; 
+      text-align: center; 
+      border-radius: 8px; 
+      max-width: 420px; 
+      width: 90%; 
+      box-shadow: 0 0 30px rgba(255, 183, 0, 0.4); 
+    }
+
+    .btn-action {
+      background: var(--crt-amber);
+      color: #000;
+      font-weight: 900;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      margin-top: 12px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
 
-  <audio id="bgAudio" loop playsinline preload="auto">
-    <source src="I'm Cooked.mp3" type="audio/mpeg">
-  </audio>
+  <div class="tv-cabinet">
+    <div class="crt-bezel">
+      <div class="crt-screen">
+        <div class="static-overlay" id="staticOverlay"></div>
 
-  <div class="app-container" id="appContainer">
-    <header>
-      <h1>👴 BOOMER LINGO BINGO MAXXING 👴</h1>
-      <p style="color: var(--lead-cyan); font-weight: 800; font-size: 0.65rem; margin: 2px 0 0 0;">CARLIN'S "GIMME IT, IT'S MINE!" EVALUATOR</p>
-    </header>
+        <header>
+          <h1>📺 BOOMERVISION DIAGNOSTIC 📺</h1>
+          <div class="ch-display">
+            <span>CH: <span id="chNum">03</span></span>
+            <span id="diagProgress">TEST 1/10</span>
+          </div>
+        </header>
 
-    <div class="response-banner" id="responseBanner">
-      <div style="font-size: 1.4rem;" id="responseIcon">📺</div>
-      <div style="font-size: 0.72rem; font-weight: 700; color: #ffffff;">
-        "<span id="algospeakText">Boomervision Audit Initiated!</span>"
+        <div class="diagnostic-card" id="diagCard">
+          <div>
+            <div class="question-box" id="qText">Loading CRT Diagnostic...</div>
+            <div class="context-box" id="qContext">Carlin's generational telemetry engine initialized.</div>
+          </div>
+
+          <div class="diag-options">
+            <button class="diag-btn" onclick="processAnswer(true)">YES (AFFIRM)</button>
+            <button class="diag-btn diag-btn-no" onclick="processAnswer(false)">NO (REJECT)</button>
+          </div>
+        </div>
+
+        <div class="category-tracker">
+          <div class="tracker-title">REAL-TIME CATEGORY DIAGNOSIS</div>
+          <div class="category-bars">
+            <div class="cat-row">
+              <span class="cat-name">STAIRMASTER NARCISSIST</span>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" id="cat1Bar" style="background: var(--crt-red);"></div></div>
+            </div>
+            <div class="cat-row">
+              <span class="cat-name">COUNTERCULTURE SURVIVOR</span>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" id="cat2Bar" style="background: var(--crt-green);"></div></div>
+            </div>
+            <div class="cat-row">
+              <span class="cat-name">CABLE NEWS AUTOMATON</span>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" id="cat3Bar" style="background: var(--crt-amber);"></div></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="meter-card">
-      <div class="meter-header">
-        <span id="labelNeet" style="color: var(--lawn-green);">← COUNTERCULTURE SURVIVOR</span>
-        <span id="labelWagie" style="color: var(--boomer-gold);">STAIRMASTER NARCISSIST →</span>
+    <!-- Retro Mechanical Control Panel -->
+    <div class="tv-controls-panel">
+      <div class="dial-wrapper" onclick="turnDial()">
+        <div class="rotary-dial" id="channelDial"></div>
+        <span class="dial-label">TUNER MOTOR</span>
       </div>
-      <div class="centered-meter-bg">
-        <div class="meter-center-line"></div>
-        <div class="meter-bar-left" id="meterBarLeft"></div>
-        <div class="meter-bar-right" id="meterBarRight"></div>
+      <div style="font-size: 0.6rem; color: var(--subtext); text-align: center;">
+        <div>MOTOR SYNCHRONIZED</div>
+        <div style="color: var(--crt-cyan); font-weight: bold; margin-top:2px;">ANALOG SPEECH SYNTH</div>
       </div>
-
-      <div class="meter-header" style="margin-top: 6px;">
-        <span style="color: var(--subtext);">HIERARCHY CLUTCH METER</span>
-        <span style="color: var(--boomer-red);">BOOMERVISION BRAINROT 📺</span>
-      </div>
-      <div class="centered-meter-bg">
-        <div class="rage-bar-fill" id="rageBarFill"></div>
-      </div>
-    </div>
-
-    <div class="docket-card">
-      <div style="color: var(--boomer-gold); font-size: 0.7rem; font-weight: 900; margin-bottom: 4px; text-transform: uppercase;">📊 BOOMER RANK & CARLIN DOSSIER</div>
-      <div class="boomer-stats-grid">
-        <div class="stat-box"><span class="stat-title">Toys Accumulated</span><span class="stat-val" id="statTendies">0</span></div>
-        <div class="stat-box"><span class="stat-title">Boomervision Hrs</span><span class="stat-val" id="statFries">0</span></div>
-        <div class="stat-box"><span class="stat-title">Hypocrisy Level</span><span class="stat-val" id="statSauce">0</span></div>
-        <div class="stat-box"><span class="stat-title">HOA Fines Issued</span><span class="stat-val" id="statHours">0</span></div>
-        <div class="stat-box"><span class="stat-title">Ladder Pulled Up</span><span class="stat-val" id="statCage">100% Locked</span></div>
-        <div class="stat-box"><span class="stat-title">Boomer Cringe</span><span class="stat-val" id="statRage">0%</span></div>
-      </div>
-    </div>
-
-    <div class="bingo-grid" id="grid"></div>
-
-    <div class="quiz-card">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <h3 style="color: var(--lead-cyan); margin: 0; font-size: 0.75rem;">⚡ REAL BOOMER LOGIC OR CHEUGY CAP?</h3>
-        <span id="quizScoreText" style="font-size: 0.65rem; color: var(--lead-cyan); font-weight: 800;">SCORE: 0/0</span>
-      </div>
-      <p id="quizQuestion" style="font-size: 0.72rem; font-weight: 600; margin: 6px 0;">Loading Carlin audit...</p>
-      <div class="quiz-options" id="quizOptionsContainer"></div>
-    </div>
-
-    <div class="game-center-panel">
-      <div style="color: var(--lawn-green); font-size: 0.7rem; font-weight: 900; text-align: center; margin-bottom: 3px;">🎮 BOOMER ARCADE & SUPPORT</div>
-      <div style="color: var(--subtext); font-size: 0.6rem; text-align: center; margin-bottom: 8px;">Audit the generational hoarders or reset the board!</div>
-      
-      <div class="control-row">
-        <button class="btn-action btn-cyan-solid" onclick="toggleAudio()" id="toggleAudioBtn">🔊 SOUND : ON</button>
-        <button class="btn-action btn-cyan-solid" onclick="openModal('howToPlayModal')">📖 RULES MAXXING</button>
-        <button class="btn-action btn-green-solid" onclick="openModal('cryptoModal')">🪙 CRYPTO / PAYPAL</button>
-      </div>
-
-      <div class="control-row" style="padding: 0 5%;">
-        <button class="btn-action btn-pink-solid" onclick="shareGame()">🔗 SHARE FLEX</button>
-        <button class="btn-action btn-red-solid" onclick="triggerResetModal()">🔄 NEW BOARD</button>
-        <button class="btn-action btn-red-solid" onclick="toggleSongState()" id="playStopBtn">▶ PLAY TRACK</button>
-      </div>
-
-      <div class="control-row">
-        <a class="btn-action btn-pink-solid" href="https://minigamemaxxing.com" target="_blank" style="width: 100%;">🌐 VISIT MINIGAMEMAXXING.COM 🌐</a>
-      </div>
-    </div>
-
-    <div class="bottom-status-bar">
-      <div class="bottom-status-left">
-        👁️ HIERARCHY CLUTCHED: <span id="processedCount">∞</span>
-      </div>
-      <div class="bottom-status-right">
-        <a href="https://www.paypal.com/ncp/payment/DQ5P9M2JGQM2E" target="_blank" class="btn-status-link">PayPal</a>
-        <button class="btn-status-box" onclick="openModal('cryptoModal')">💳 PAYPAL QR</button>
-        <button class="btn-status-box" onclick="shareGame()">🔗 SHARE</button>
+      <div class="dial-wrapper" onclick="triggerStaticEffect()">
+        <div class="rotary-dial" style="transform: rotate(45deg);"></div>
+        <span class="dial-label">STATIC PULSE</span>
       </div>
     </div>
   </div>
 
-  <footer class="copyright-notice">
-    © 2026 BOOMER LINGO BINGO MAXXING. All Rights Reserved.
-  </footer>
-
-  <!-- ================= MODAL 1: BOOMER RANK (CORRECT ROW) ================= -->
-  <div class="modal" id="rizzBingoModal">
-    <div class="modal-content rizz-modal-border">
-      <h2 style="color: var(--lawn-green); margin: 4px 0;">⚡ COUNTERCULTURE SURVIVOR! ⚡</h2>
-      <img src="boomer-bingo.png" alt="Counterculture Survivor" class="modal-img green-border">
-      <p style="font-size: 0.78rem; color: var(--text);">NO CAP! You avoided selling out for soybean futures and Stairmasters!</p>
-      
-      <div style="background: #020305; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin: 8px 0; text-align: left;" class="stat-box-container">
-      </div>
-      <button class="btn-action btn-green-solid" style="width: 100%; padding: 8px;" onclick="closeModal('rizzBingoModal')">KEEP SURVIVING</button>
-    </div>
-  </div>
-
-  <!-- ================= MODAL 2: BOOMER BINGO (WRONG ROW) ================= -->
-  <div class="modal" id="boomerBingoModal">
-    <div class="modal-content boomer-modal-border">
-      <h2 style="color: var(--boomer-red); margin: 4px 0;">🤡 STAIRMASTER NARCISSIST! 🤡</h2>
-      <img src="Cheugy Boomer Bingo.png" alt="Cheugy Boomer Bingo" class="modal-img red-border">
-      <p style="font-size: 0.78rem; color: var(--text);">GIMME IT IT'S MINE! You lined up 5 straight generational hypocrisies!</p>
-      
-      <div style="background: #020305; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin: 8px 0; text-align: left;" class="stat-box-container">
-      </div>
-      <button class="btn-action btn-red-solid" style="width: 100%; padding: 8px;" onclick="closeModal('boomerBingoModal')">RESET BOARD</button>
-    </div>
-  </div>
-
-  <!-- ================= MODAL 3: SURVIVOR METER MAXED ================= -->
-  <div class="modal" id="rizzGodMeterModal">
+  <!-- RESULT DIAGNOSTIC MODAL -->
+  <div class="modal" id="resultModal">
     <div class="modal-content">
-      <h2 style="color: var(--boomer-gold); margin: 4px 0;">👑 CARLIN ANTI-ESTABLISHMENT LEGEND! 👑</h2>
-      <img src="modal_gigachad_raw.png" alt="Carlin Legend" class="modal-img">
-      <p style="font-size: 0.78rem; color: var(--text);">MAX AURA! You completely rejected the "Just Say No" middle-age scold transformation!</p>
-      
-      <div style="background: #020305; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin: 8px 0; text-align: left;" class="stat-box-container">
-      </div>
-      <button class="btn-action btn-pink-solid" style="width: 100%; padding: 8px;" onclick="closeModal('rizzGodMeterModal')">RECLAIM THRONES</button>
-    </div>
-  </div>
-
-  <!-- ================= MODAL 4: BOOMER METER MAXED ================= -->
-  <div class="modal" id="boomerMeterModal">
-    <div class="modal-content boomer-modal-border">
-      <h2 style="color: var(--boomer-red); margin: 4px 0;">👵 PEAK CARLIN BOOMER OVERLOAD! 👵</h2>
-      <img src="modal_boomer_overload.png" alt="Boomer Overload" class="modal-img red-border">
-      <p style="font-size: 0.78rem; color: var(--text);">COCAINE TO ROGAINE! You maxed out all entitlement and hierarchy-clutching stats!</p>
-      
-      <div style="background: #020305; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin: 8px 0; text-align: left;" class="stat-box-container">
-      </div>
-      <button class="btn-action btn-red-solid" style="width: 100%; padding: 8px;" onclick="closeModal('boomerMeterModal')">TOUCH GRASS</button>
-    </div>
-  </div>
-
-  <!-- ================= MODAL 5: ALL TILES / BUTTON PUSHER NPC ================= -->
-  <div class="modal" id="npcButtonPusherModal">
-    <div class="modal-content">
-      <h2 style="color: var(--lead-cyan); margin: 4px 0;">🤖 BOOMERVISION AUTOMATON UNLOCKED! 🤖</h2>
-      <img src="NPC Button Pusher.png" alt="NPC Button Pusher" class="modal-img">
-      <p style="font-size: 0.78rem; color: var(--text);">25 BUTTONS CLICKED WITH ZERO MATCHES! Unlocked total cable-news zombie status!</p>
-      
-      <div style="background: #020305; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin: 8px 0; text-align: left;" class="stat-box-container">
-      </div>
-      <button class="btn-action btn-cyan-solid" style="width: 100%; padding: 8px;" onclick="closeModal('npcButtonPusherModal')">REBOOT NPC</button>
-    </div>
-  </div>
-
-  <!-- ================= MODAL 6: DOOMER RESET MODAL ================= -->
-  <div class="modal" id="doomerResetModal">
-    <div class="modal-content boomer-modal-border">
-      <h2 style="color: var(--boomer-red); margin: 4px 0;">💀 DOOMER RESET 💀</h2>
-      <img src="modal_doomer_reset.png" alt="Doomer Reset" class="modal-img red-border">
-      <p style="font-size: 0.78rem; color: var(--text);">IT'S OVER BRO! Total generational failure, infinite negative aura, cooked beyond belief...</p>
-      
-      <div style="background: #020305; border: 1px solid var(--border); border-radius: 6px; padding: 8px; margin: 8px 0; text-align: left;" class="stat-box-container">
-      </div>
-      <button class="btn-action btn-red-solid" style="width: 100%; padding: 8px;" onclick="closeModal('doomerResetModal')">WIPE THE BOARD</button>
-    </div>
-  </div>
-
-  <!-- ================= HELP & PAYPAL MODALS ================= -->
-  <div class="modal" id="howToPlayModal">
-    <div class="modal-content">
-      <h3 style="color: var(--boomer-gold); margin-top:0;">🎮 HOW TO MAXX</h3>
-      <p style="font-size: 0.75rem; color: var(--text); text-align: left;">
-        Fr fr no cap, test how deep into George Carlin's Boomer archetype you rank!<br><br>
-        • Hit <strong>YES</strong> if it's true Boomer entitlement/hypocrisy, or <strong>NO</strong> if it's counterculture cap.<br>
-        • Line up 5 in a row to hit <strong>Counterculture Survivor Bingo</strong> or crash out with <strong>Stairmaster Narcissist Bingo</strong>!<br>
-        • Overflow the meter to go full <strong>Carlin Anti-Establishment Legend</strong> or reach peak <strong>Peak Boomer Overload</strong>!<br>
-        • Mindlessly spam all 25 tiles to unlock certified Boomervision Automaton status.
-      </p>
-      <button class="btn-action btn-pink-solid" style="width: 100%;" onclick="closeModal('howToPlayModal')">SAY LESS / SAY NO</button>
-    </div>
-  </div>
-
-  <div class="modal" id="cryptoModal">
-    <div class="modal-content">
-      <h3 style="color: #f7931a; margin-top:0;">🪙 TIP JAR & PAYPAL</h3>
-      <p style="font-size: 0.75rem; color: var(--subtext); margin-bottom: 8px;">
-        SUPPORT US ON PAYPAL: <a href="https://www.paypal.com/ncp/payment/DQ5P9M2JGQM2E" target="_blank" style="color: var(--lead-cyan);">Business Checkout Link</a>
-      </p>
-
-      <div class="qr-container">
-        <div class="qr-card">
-          <div class="qr-title">PayPal QR</div>
-          <a href="https://www.paypal.com/ncp/payment/DQ5P9M2JGQM2E" target="_blank">
-            <img src="mgmpaypal.png" alt="PayPal Business Checkout QR Code">
-          </a>
-          <button class="copy-btn" onclick="copyText('https://www.paypal.com/ncp/payment/DQ5P9M2JGQM2E', this)">Copy Checkout Link</button>
-        </div>
-
-        <div class="qr-card">
-          <div class="qr-title">Solana (SOL) Address</div>
-          <img src="solqrcrypto.png" alt="Solana QR Code">
-          <div class="qr-address" onclick="copyText('6Xc9Z3wvmM2CCbYR3qqEeyrbVMuescwaUBLMJJM8S1Da', this)">6Xc9Z3wvmM2CCbYR3qqEeyrbVMuescwaUBLMJJM8S1Da</div>
-          <button class="copy-btn" onclick="copyText('6Xc9Z3wvmM2CCbYR3qqEeyrbVMuescwaUBLMJJM8S1Da', this)">Copy Address</button>
-        </div>
-
-        <div class="qr-card">
-          <div class="qr-title">Bitcoin (Native SegWit) Address</div>
-          <img src="btcqrcrypto.png" alt="Bitcoin QR Code">
-          <div class="qr-address" onclick="copyText('bc1qa8ywssqd6nwgzgguy7yscnexu04u4sc3vha7ez', this)">bc1qa8ywssqd6nwgzgguy7yscnexu04u4sc3vha7ez</div>
-          <button class="copy-btn" onclick="copyText('bc1qa8ywssqd6nwgzgguy7yscnexu04u4sc3vha7ez', this)">Copy Address</button>
-        </div>
-
-        <div class="qr-card">
-          <div class="qr-title">Ethereum (ETH) Address</div>
-          <img src="ethqrcrypto.png" alt="Ethereum QR Code">
-          <div class="qr-address" onclick="copyText('0x43E80D038F2471e431ad4eF280C568A73D6f3A49', this)">0x43E80D038F2471e431ad4eF280C568A73D6f3A49</div>
-          <button class="copy-btn" onclick="copyText('0x43E80D038F2471e431ad4eF280C568A73D6f3A49', this)">Copy Address</button>
-        </div>
-
-        <div class="qr-card">
-          <div class="qr-title">BNB Smart Chain Address</div>
-          <img src="bnbqrcrypto.png" alt="BNB Smart Chain QR Code">
-          <div class="qr-address" onclick="copyText('0x43E80D038F2471e431ad4eF280C568A73D6f3A49', this)">0x43E80D038F2471e431ad4eF280C568A73D6f3A49</div>
-          <button class="copy-btn" onclick="copyText('0x43E80D038F2471e431ad4eF280C568A73D6f3A49', this)">Copy Address</button>
-        </div>
-      </div>
-
-      <button class="btn-action btn-pink-solid" style="width: 100%; margin-top: 12px;" onclick="closeModal('cryptoModal')">CLOSE</button>
+      <h2 id="resTitle" style="color: var(--crt-amber); margin-top: 0;">DIAGNOSTIC COMPLETE</h2>
+      <p id="resDesc" style="font-size: 0.8rem; color: #fff; line-height: 1.4;"></p>
+      <div id="resStats" style="font-size: 0.7rem; color: var(--crt-cyan); text-align: left; background: #000; padding: 8px; border: 1px dashed var(--crt-cyan); margin-top: 8px;"></div>
+      <button class="btn-action" onclick="resetDiagnostic()">RE-TUNE TELEVISION</button>
     </div>
   </div>
 
   <script>
-    const audioEl = document.getElementById('bgAudio');
-    const toggleBtn = document.getElementById('toggleAudioBtn');
-    let soundEnabled = true;
-    let vibeEnabled = true;
-    let songPlaying = false;
+    // Audio Context Setup
     let audioCtx = null;
 
-    function initAudioContext() {
+    function initAudio() {
       if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       }
@@ -436,555 +383,254 @@
       }
     }
 
-    function playOutcomeSound(isPinkCringe) {
-      if (!soundEnabled) return;
-      try {
-        initAudioContext();
-        const now = audioCtx.currentTime;
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
+    // Heavy Mechanical Channel Changer Sound (Motor + Loud Metal Clunk)
+    function playDialMechanicalSound() {
+      initAudio();
+      if (!audioCtx) return;
 
-        if (isPinkCringe) {
-          osc.type = 'sawtooth';
-          osc.frequency.setValueAtTime(140, now);
-          osc.frequency.exponentialRampToValueAtTime(50, now + 0.2);
-          gain.gain.setValueAtTime(0.3, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start(now);
-          osc.stop(now + 0.2);
-        } else {
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(523.25, now); 
-          osc.frequency.exponentialRampToValueAtTime(1046.50, now + 0.15); 
-          gain.gain.setValueAtTime(0.25, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start(now);
-          osc.stop(now + 0.15);
-        }
-      } catch(e) {}
+      const now = audioCtx.currentTime;
+
+      // 1. Motor Whine / Humming Buzz
+      const motorOsc = audioCtx.createOscillator();
+      const motorGain = audioCtx.createGain();
+      motorOsc.type = 'sawtooth';
+      motorOsc.frequency.setValueAtTime(80, now);
+      motorOsc.frequency.linearRampToValueAtTime(140, now + 0.12);
+      motorOsc.frequency.linearRampToValueAtTime(40, now + 0.25);
+      
+      motorGain.gain.setValueAtTime(0.2, now);
+      motorGain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
+
+      motorOsc.connect(motorGain);
+      motorGain.connect(audioCtx.destination);
+      motorOsc.start(now);
+      motorOsc.stop(now + 0.25);
+
+      // 2. Heavy Metallic Gear Clunk
+      const clunkOsc = audioCtx.createOscillator();
+      const clunkGain = audioCtx.createGain();
+      clunkOsc.type = 'square';
+      clunkOsc.frequency.setValueAtTime(220, now + 0.1);
+      clunkOsc.frequency.exponentialRampToValueAtTime(40, now + 0.22);
+
+      clunkGain.gain.setValueAtTime(0.4, now + 0.1);
+      clunkGain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+
+      clunkOsc.connect(clunkGain);
+      clunkGain.connect(audioCtx.destination);
+      clunkOsc.start(now + 0.1);
+      clunkOsc.stop(now + 0.22);
     }
 
-    function tryPlayAudio() {
-      if (!soundEnabled || !audioEl) return;
-      initAudioContext();
-      audioEl.volume = 0.8;
-      const promise = audioEl.play();
-      if (promise !== undefined) {
-        promise.then(() => {
-          songPlaying = true;
-          const playBtn = document.getElementById('playStopBtn');
-          if (playBtn) {
-            playBtn.innerText = "🛑 STOP TRACK";
-            playBtn.className = "btn-action btn-red-solid";
-          }
-        }).catch(e => {
-          console.log('Autoplay blocked.');
-        });
-      }
-    }
-
-    function vibrate(pattern) {
-      if (vibeEnabled && typeof navigator !== 'undefined' && 'vibrate' in navigator) {
-        try {
-          navigator.vibrate(pattern);
-        } catch(e) {}
-      }
-    }
-
-    function toggleAudio() {
-      vibrate(50);
-      soundEnabled = !soundEnabled;
-      vibeEnabled = soundEnabled;
-
-      if (soundEnabled) {
-        toggleBtn.innerText = "🔊 SOUND : ON";
-      } else {
-        if (audioEl) {
-          audioEl.pause();
-          songPlaying = false;
-          const playBtn = document.getElementById('playStopBtn');
-          if (playBtn) {
-            playBtn.innerText = "▶ PLAY TRACK";
-            playBtn.className = "btn-action btn-pink-solid";
-          }
-        }
-        toggleBtn.innerText = "🔇 SOUND: OFF";
-      }
-    }
-
-    function toggleSongState() {
-      const btn = document.getElementById('playStopBtn');
-      if (!songPlaying) {
-        songPlaying = true;
-        btn.innerText = "🛑 STOP TRACK";
-        btn.className = "btn-action btn-red-solid";
-        if (soundEnabled) tryPlayAudio();
-      } else {
-        songPlaying = false;
-        btn.innerText = "▶ PLAY TRACK";
-        btn.className = "btn-action btn-pink-solid";
-        if (audioEl) audioEl.pause();
-      }
-      vibrate([60, 40]);
-    }
-
-    const enableAudioOnInteraction = () => {
-      initAudioContext();
-      document.removeEventListener('click', enableAudioOnInteraction);
-      document.removeEventListener('touchstart', enableAudioOnInteraction);
-    };
-    document.addEventListener('click', enableAudioOnInteraction);
-    document.addEventListener('touchstart', enableAudioOnInteraction);
-
-    function playBingoChime() {
-      if (!soundEnabled) return;
-      try {
-        initAudioContext();
-        const now = audioCtx.currentTime;
-        [440, 554.37, 659.25, 880, 1108.73].forEach((freq, i) => {
-          const osc = audioCtx.createOscillator();
-          const gain = audioCtx.createGain();
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, now + i * 0.08);
-          gain.gain.setValueAtTime(0.3, now + i * 0.08);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.25);
-          osc.connect(gain);
-          gain.connect(audioCtx.destination);
-          osc.start(now + i * 0.08);
-          osc.stop(now + i * 0.08 + 0.25);
-        });
-      } catch(e) {}
-    }
-
-    function speakText(text) {
-      if (soundEnabled && 'speechSynthesis' in window) {
+    // Voice Synthesis for Old TV Announce
+    function speakTvVoice(text) {
+      if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 1.0;
-        utterance.pitch = 1.1;
+        utterance.rate = 0.9;
+        utterance.pitch = 0.8; // Lower, older TV broadcaster tone
         window.speechSynthesis.speak(utterance);
       }
     }
 
-    function copyText(text, btnElement) {
-      vibrate(40);
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(() => {
-          showCopySuccess(btnElement);
-        });
-      } else {
-        const area = document.createElement('textarea');
-        area.value = text;
-        document.body.appendChild(area);
-        area.select();
-        document.execCommand('copy');
-        document.body.removeChild(area);
-        showCopySuccess(btnElement);
+    // Diagnostic Questions Mapping directly into Categories
+    const DIAGNOSTIC_QUESTIONS = [
+      {
+        q: "1. Did you trade 1960s counterculture idealism for 1980s real estate hoarding?",
+        context: "Carlin: 'They went from Love Is All You Need to Whoever Has Most Toys Wins!'",
+        yesCat: "stairmaster",
+        noCat: "survivor",
+        voiceYes: "Narcissist trait registered!",
+        voiceNo: "Counterculture integrity verified."
+      },
+      {
+        q: "2. Do you consume over 4 hours of 24-hour cable news daily?",
+        context: "Boomervision Telemetry: Dictates local paranoia & voting habits.",
+        yesCat: "automaton",
+        noCat: "survivor",
+        voiceYes: "Cable news brainrot detected!",
+        voiceNo: "Unplugged from the tube."
+      },
+      {
+        q: "3. Do you demand 5 years experience for entry-level jobs you got with a handshake?",
+        context: "Ladder-Pulling Protocol: Escalating barriers for incoming generations.",
+        yesCat: "stairmaster",
+        noCat: "survivor",
+        voiceYes: "Ladder pulled upward!",
+        voiceNo: "Fair access preserved."
+      },
+      {
+        q: "4. Did you brag about severe discipline as a kid, but spoil your grandkids completely?",
+        context: "Parenting Double Standard: Strict enforcement turned total indulgence.",
+        yesCat: "stairmaster",
+        noCat: "survivor",
+        voiceYes: "Hypocrisy quotient elevated!",
+        voiceNo: "Consistent discipline balance."
+      },
+      {
+        q: "5. Do you believe your low minimum wage paid for college because you 'worked hard'?",
+        context: "Nostalgic Revisionism: Ignoring 40-year economic shifts.",
+        yesCat: "automaton",
+        noCat: "survivor",
+        voiceYes: "Revisionist memory confirmed!",
+        voiceNo: "Economic reality acknowledged."
+      },
+      {
+        q: "6. Do you turn anti-authority values into strict HOA grass-length enforcement?",
+        context: "Carlin: 'Acquired power and immediately started scolding everyone else.'",
+        yesCat: "stairmaster",
+        noCat: "survivor",
+        voiceYes: "HOA citation dispatched!",
+        voiceNo: "Suburban paranoia rejected."
+      },
+      {
+        q: "7. Do you leave the television running continuously for background noise?",
+        context: "Boomervision Signal Lock: Continuous broadcast reliance.",
+        yesCat: "automaton",
+        noCat: "survivor",
+        voiceYes: "Signal lock active!",
+        voiceNo: "Silence tolerated."
+      },
+      {
+        q: "8. Do you advocate for public spending cuts while shielding senior tax subsidies?",
+        context: "Gimme It It's Mine Doctrine: Maximum entitlement retention.",
+        yesCat: "stairmaster",
+        noCat: "survivor",
+        voiceYes: "Entitlement locked in!",
+        voiceNo: "Generational equity supported."
+      },
+      {
+        q: "9. Did you sell out rock and roll music to serve TV commercial ad campaigns?",
+        context: "Carlin: 'Swapped anti-establishment tunes for Stairmaster commercials.'",
+        yesCat: "stairmaster",
+        noCat: "survivor",
+        voiceYes: "Commercial sellout confirmed!",
+        voiceNo: "Pure rhythm retained."
+      },
+      {
+        q: "10. Do you get outraged over modern slang while forgetting 1960s hippie lingo?",
+        context: "Linguistic Scold Syndrome: Rejecting new culture while defending old cap.",
+        yesCat: "automaton",
+        noCat: "survivor",
+        voiceYes: "Boomervision scold engaged!",
+        voiceNo: "Slang flexibility active."
       }
-    }
-
-    function showCopySuccess(btnElement) {
-      if (!btnElement) return;
-      const originalText = btnElement.innerText;
-      btnElement.innerText = "COPIED!";
-      setTimeout(() => {
-        btnElement.innerText = originalText;
-      }, 2000);
-    }
-
-    const QUESTIONS = [
-      { q: "Carlin Premise 1: Did Boomers grow up with unprecedented prosperity and act entitled?", optionA: { text: "YES - Gimme It It's Mine!", isWagie: true }, optionB: { text: "NO - They Sacrificed Everything", isWagie: false }, explanation: "Carlin noted Boomers took sex, drugs & rock and roll and had a 20-year free ride!" },
-      { q: "Carlin Premise 2: Did middle-aged Boomers turn into self-righteous moralizers?", optionA: { text: "YES - Just Say No Scolds!", isWagie: true }, optionB: { text: "NO - Stayed Counterculture", isWagie: false }, explanation: "Carlin argued Boomers abandoned youth values to tell younger people to abstain and say no." },
-      { q: "Carlin Premise 3: Did Boomers commercialize rock and roll for ads and Stairmasters?", optionA: { text: "YES - Sold Out for Pasta Machines", isWagie: true }, optionB: { text: "NO - Kept It Pure", isWagie: false }, explanation: "Carlin called out selling anti-establishment ethos for TV commercials & soybean futures!" },
-      { q: "Carlin Premise 4: Did Boomers shift from 'Do Your Own Thing' to 'Whoever Has Most Toys Wins'?", optionA: { text: "YES - Cocaine to Rogaine!", isWagie: true }, optionB: { text: "NO - Remained Altruistic", isWagie: false }, explanation: "Carlin tracked their sequence from 'Love Is All You Need' to full consumer hoarding!" },
-      { q: "Carlin Premise 5: Did Boomers turn their anti-authority mentality into their own enemy when in power?", optionA: { text: "YES - Clutched the Hierarchy!", isWagie: true }, optionB: { text: "NO - Passed the Torch", isWagie: false }, explanation: "Carlin noted they acquired power and made rules harder for every younger generation!" },
-      { q: "Boomervision: Do Boomers get their political beliefs exclusively from 24/7 TV news?", optionA: { text: "YES - Cable News Brainrot", isWagie: true }, optionB: { text: "NO - Independent Research", isWagie: false }, explanation: "Boomervision anchors their worldview and dictates local HOA paranoia." },
-      { q: "Unfavorable Parenting: Did Boomers lock kids outside till dark & brag about strict discipline?", optionA: { text: "YES - Street Until Streetlights", isWagie: true }, optionB: { text: "NO - Gentle Parenting", isWagie: false }, explanation: "Boomers bragged about tough love discipline despite having zero discipline themselves!" },
-      { q: "Dangerous Conditions: Did Boomers make kids ride in truck beds with no seatbelts?", optionA: { text: "YES - Built Character!", isWagie: true }, optionB: { text: "NO - Safety Purists", isWagie: false }, explanation: "Riding open air in pickup beds was standard Boomer child rearing." },
-      { q: "Trouble Today 1: Would spanking kids and bragging about it get Boomers reported today?", optionA: { text: "YES - Immediate CPS Call", isWagie: true }, optionB: { text: "NO - Totally Normal", isWagie: false }, explanation: "Bragging about corporal punishment is instantly flagged in modern parenting." },
-      { q: "Trouble Today 2: Leaving kids in hot cars or unsafe lots while running errands?", optionA: { text: "YES - Illegal Neglect Now", isWagie: true }, optionB: { text: "NO - Fine Back Then", isWagie: false }, explanation: "Leaving children unsupervised in vehicles would cause an arrest today." },
-      { q: "Trouble Today 3: Smoking inside enclosed cars with the windows rolled up?", optionA: { text: "YES - Severe Health Offense", isWagie: true }, optionB: { text: "NO - Fresh Air", isWagie: false }, explanation: "Second-hand smoke containment was standard Boomer parenting environment." },
-      { q: "Trouble Today 4: Making kids stay outside until streetlights turn on regardless of heat/weather?", optionA: { text: "YES - Child Neglect Citation", isWagie: true }, optionB: { text: "NO - Peak Freedom", isWagie: false }, explanation: "Locking kids out of the house for 8 hours straight is criminal neglect today." },
-      { q: "Trouble Today 5: Letting kids ride unrestrained in pickup beds down highways?", optionA: { text: "YES - Massive State Fine", isWagie: true }, optionB: { text: "NO - Standard Commute", isWagie: false }, explanation: "Transporting human cargo unrestrained in truck beds is heavily illegal now." },
-      { q: "Grandchild Double Standard: Do Boomers let grandchildren break every rule they punished their kids for?", optionA: { text: "YES - Total Hypocrisy!", isWagie: true }, optionB: { text: "NO - Equal Strictness", isWagie: false }, explanation: "Boomers spoil grandkids with zero restrictions while remembering their own kids with iron fists." },
-      { q: "Hierarchy Clutching: Do Boomers demand 5 years experience for entry-level jobs they got with a handshake?", optionA: { text: "YES - Pulled Up The Ladder", isWagie: true }, optionB: { text: "NO - Fair Hiring", isWagie: false }, explanation: "Boomers walked in with a firm handshake, now require 3 rounds of software testing for low pay." },
-      { q: "Voting Behavior: Do Boomers consistently vote to protect senior wealth while cutting youth funding?", optionA: { text: "YES - GIMME IT IT'S MINE", isWagie: true }, optionB: { text: "NO - Invest In Youth", isWagie: false }, explanation: "Boomer voting blocks hoard tax subsidies and protect property value inflation." },
-      { q: "Nostalgic Revisionism: Do Boomers claim they worked 80 hours a week for $1.50 minimum wage?", optionA: { text: "YES - Uphill Both Ways", isWagie: true }, optionB: { text: "NO - Accurate History", isWagie: false }, explanation: "Boomers conveniently forget their minimum wage easily paid for college tuition and rent." },
-      { q: "Real Slang Check: Is 'Do Your Own Thing' original Boomer counterculture slang?", optionA: { text: "YES - 60s Hippie Slang", isWagie: false }, optionB: { text: "NO - Zoomer Term", isWagie: true }, explanation: "'Do Your Own Thing' was 60s Boomer slang before they switched to 'Just Say No'!" },
-      { q: "Real Slang Check: Is 'Whoever Winds Up With Most Toys Wins' 80s Boomer greed doctrine?", optionA: { text: "YES - Peak Boomer Mantra", isWagie: true }, optionB: { text: "NO - Medieval Quote", isWagie: false }, explanation: "This phrase captured the 1980s Boomer corporate sell-out pivot." },
-      { q: "Real Slang Check: Is 'Cocaine to Rogaine' Carlin's summary of Boomer aging?", optionA: { text: "YES - Carlin Classic", isWagie: true }, optionB: { text: "NO - Fake Quote", isWagie: false }, explanation: "Carlin famously summarized Boomers going from 70s drug culture to 90s anti-aging paranoia." }
     ];
 
-    const RAW_GRID_ITEMS = [
-      // 5 Carlin Entitlement & Hypocrisy Descriptions
-      { text: "Gimme It, It's Mine!", isWagieTile: true, icon: "🛝", exp: "Carlin: Unprecedented prosperity bred absolute narcissism!" },
-      { text: "Cocaine to Rogaine", isWagieTile: true, icon: "💊", exp: "Carlin: Swapped 70s counterculture for 90s anti-aging panics!" },
-      { text: "Pasta & Stairmasters", isWagieTile: true, icon: "🏋️", exp: "Carlin: Sold out rock and roll to TV commercials for consumer gear!" },
-      { text: "Just Say No Scolds", isWagieTile: true, icon: "🤫", exp: "Carlin: Middle-age burnout turned them into moralizing hypocrites!" },
-      { text: "Hierarchy Clutching", isWagieTile: true, icon: "🪜", exp: "Carlin: Acquired power and pulled up every ladder behind them!" },
+    let currentIndex = 0;
+    let categoryScores = {
+      stairmaster: 0,
+      survivor: 0,
+      automaton: 0
+    };
 
-      // 5 Things They'd Be In Trouble For Today (But Let Grandkids Get Away With)
-      { text: "Truck Bed Rides", isWagieTile: true, icon: "🛻", exp: "Riding unrestrained down highways; illegal today, grandkid gets a free ATV!" },
-      { text: "Stay Out Till Dark", isWagieTile: true, icon: "🌇", exp: "Locked out until streetlights; today's CPS call, but grandkid gets iPad!" },
-      { text: "Belt Discipline Brag", isWagieTile: true, icon: "🥋", exp: "Bragged about physical discipline with zero self-restraint; grandkid gets candy!" },
-      { text: "Hot Car Waiting", isWagieTile: true, icon: "🚗", exp: "Left kids in windows-up parking lots; felony neglect now, grandkid gets chauffeur!" },
-      { text: "Hot Smoke Commute", isWagieTile: true, icon: "🚬", exp: "Chain-smoking in sealed station wagons; child endangerment today, grandkid gets vape ban!" },
+    let dialRotation = 0;
 
-      // 5 Boomer Behavior & Boomervision Indicators
-      { text: "Boomervision News", isWagieTile: true, icon: "📺", exp: "24/7 cable news paranoia dictating voting and neighborhood policy!" },
-      { text: "Handshake Job Myth", isWagieTile: true, icon: "🤝", exp: "Demanding 5-year degrees for jobs they got by walking in and smiling!" },
-      { text: "Buying House for $30k", isWagieTile: true, icon: "🏡", exp: "Bought suburban real estate for 2x salary, now blocking affordable housing!" },
-      { text: "HOA Fine Enforcement", isWagieTile: true, icon: "📝", exp: "Leveraging local authority to fine neighbors over lawn grass height!" },
-      { text: "Nobody Wants To Work", isWagieTile: true, icon: "💼", exp: "Ignoring 40-year wage stagnation while blaming youth work ethic!" },
-
-      // Counterculture / Non-Wagie Tiles (YES means W / Counterculture)
-      { text: "Do Your Own Thing", isWagieTile: false, icon: "☮️", exp: "Original 60s counterculture ethos before the sell-out!" },
-      { text: "Woodstock Pure", isWagieTile: false, icon: "🎸", exp: "Pre-commercialization rock and roll spirit!" },
-      { text: "Question Authority", isWagieTile: false, icon: "✊", exp: "Anti-establishment mentality before acquiring corporate power!" },
-      { text: "Public Library Loyalist", isWagieTile: false, icon: "📚", exp: "Supporting public goods for future generations!" },
-      { text: "Ladder Lowerer", isWagieTile: false, icon: "🤝", exp: "Rare Boomer advocating for affordable housing and college tuition!" },
+    function turnDial() {
+      dialRotation += 36;
+      document.getElementById('channelDial').style.transform = `rotate(${dialRotation}deg)`;
+      playDialMechanicalSound();
       
-      // Additional Boomer Archetypes
-      { text: "Soybean Futures", isWagieTile: true, icon: "📈", exp: "Carlin: Trading anti-establishment values for stock market speculation!" },
-      { text: "Most Toys Wins", isWagieTile: true, icon: "🏎️", exp: "Carlin: Replaced 'Love Is All You Need' with unbridled materialism!" },
-      { text: "Writing Paper Checks", isWagieTile: true, icon: "🖊️", exp: "Holding up grocery lines to balance ledgers in 2026!" },
-      { text: "Wi-Fi Paranoia", isWagieTile: true, icon: "📡", exp: "Fearing invisible rays while watching 14 hours of boomervision!" },
-      { text: "Uphill Both Ways", isWagieTile: true, icon: "🏔️", exp: "Exaggerated tales of hardship to justify pulling up economic ladders!" }
-    ];
-
-    const ALL_STAT_DEFINITIONS = [
-      { id: 1, label: "Generational Wealth Hoarded", neetVal: (t,f,s,h) => "$0 (Shared Access)", wagieVal: (w) => "$" + (w * 450000) + " (In Real Estate)" },
-      { id: 2, label: "Boomervision Cable Hours", neetVal: (t,f,s,h) => "0 hrs (Unplugged)", wagieVal: (w) => (w * 14) + " hrs/day" },
-      { id: 3, label: "Ladder-Pulling Level", neetVal: (t,f,s,h) => "0% (Passed Torch)", wagieVal: (w) => (w * 10) + "% Max Hoard" },
-      { id: 4, label: "HOA Fines Handed Out", neetVal: (t,f,s,h) => "0 Fines", wagieVal: (w,h) => (w * 8) + " Violations" },
-      { id: 5, label: "Stairmasters & Toys Owned", neetVal: () => "0 (Minimalist)", wagieVal: (w) => (w * 5) + " Consumer Toys" },
-      { id: 6, label: "Carlin Hypocrisy Score", neetVal: () => "0 (No Cap)", wagieVal: (w) => (w * 20) + "% Sell-Out" },
-      { id: 7, label: "Grandchild Spoil Ratio", neetVal: () => "Balanced", wagieVal: (w) => (w * 15) + "% Double Standard" },
-      { id: 8, label: "Dangerous Ride Miles", neetVal: () => "0 Miles", wagieVal: (w) => (w * 100) + " Miles in Truck Bed" },
-      { id: 9, label: "Moralizing Speeches", neetVal: () => "0 Lectures", wagieVal: (w) => (w * 12) + " Just Say No Speeches" },
-      { id: 10, label: "Overall Boomer Rank", neetVal: () => "100% COUNTERCULTURE SURVIVOR", wagieVal: () => "100% STAIRMASTER NARCISSIST" }
-    ];
-
-    let currentGrid = [];
-    let netBalance = 0, totalAnswers = 0, wagieCount = 0, neetCount = 0, buttonsPushed = 0;
-    let tendies = 0, fries = 0, sauce = 0, hours = 0;
-    let evaluatedState = Array(25).fill(null);
-    let currentQuizIndex = 0;
-
-    function shuffleArray(arr) {
-      const copy = [...arr];
-      for (let i = copy.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [copy[i], copy[j]] = [copy[j], copy[i]];
-      }
-      return copy;
+      const chElem = document.getElementById('chNum');
+      let currentCh = parseInt(chElem.innerText);
+      chElem.innerText = (currentCh % 13 + 1).toString().padStart(2, '0');
     }
 
-    function initGame() {
-      vibrate([40, 30, 40]);
-      netBalance = 0; totalAnswers = 0; wagieCount = 0; neetCount = 0; buttonsPushed = 0;
-      tendies = 0; fries = 0; sauce = 0; hours = 0;
-      evaluatedState.fill(null);
-      currentQuizIndex = 0;
-
-      const banner = document.getElementById('responseBanner');
-      if (banner) banner.classList.remove('show');
-
-      const app = document.getElementById('appContainer');
-      app.classList.remove('maxed-red', 'gold-border');
-      document.body.classList.remove('gold-glow', 'ragie-shake');
-
-      const gridElem = document.getElementById('grid');
-      if (!gridElem) return;
-      gridElem.innerHTML = '';
-
-      const shuffled = shuffleArray(RAW_GRID_ITEMS);
-      currentGrid = shuffled.slice(0, 24);
-
-      currentGrid.splice(12, 0, { 
-        text: "Carlin Boomer Card", 
-        imgName: "rizz god zoomer card.png",
-        isWagieTile: false, 
-        isFree: true, 
-        icon: "📺", 
-        exp: "George Carlin Boomer Audit Free Tile Unlocked!" 
-      });
-
-      currentGrid.forEach((item, idx) => {
-        const cell = document.createElement('div');
-        const isAlt = (Math.floor(idx / 5) + (idx % 5)) % 2 === 1;
-        cell.className = `cell ${isAlt ? 'alt-tile' : ''}`;
-        cell.id = `cell-${idx}`;
-        if (item.isFree) {
-          cell.style.border = '1px solid var(--boomer-gold)';
-          cell.innerHTML = `
-            <div class="cell-icon">${item.icon}</div>
-            <div class="cell-title" style="font-size:0.45rem;">${item.text}</div>
-            <div style="font-size:0.42rem; color:var(--boomer-gold); font-weight:900;">FREE TILE</div>
-          `;
-          cell.onclick = () => selectTile(idx, false);
-        } else {
-          cell.innerHTML = `
-            <div class="cell-icon">${item.icon}</div>
-            <div class="cell-title">${item.text}</div>
-            <div class="tf-controls">
-              <button class="tf-btn tf-btn-t" onclick="selectTile(${idx}, true)">YES</button>
-              <button class="tf-btn tf-btn-f" onclick="selectTile(${idx}, false)">NO</button>
-            </div>
-          `;
-        }
-        gridElem.appendChild(cell);
-      });
-
-      loadQuiz();
-      updateMetrics();
+    function triggerStaticEffect() {
+      const overlay = document.getElementById('staticOverlay');
+      overlay.classList.add('active');
+      setTimeout(() => overlay.classList.remove('active'), 250);
     }
 
-    function triggerResetModal() {
-      launchSpecificModal('doomerResetModal', [200, 100, 200], "DOOMER RESET ACTIVATED");
-    }
-
-    function triggerEffects(isPinkCringe) {
-      const app = document.getElementById('appContainer');
-      const body = document.body;
-
-      if (isPinkCringe) {
-        vibrate([200, 100, 200, 100, 300]);
-        playOutcomeSound(true);
-        body.classList.remove('gold-glow');
-        app.classList.remove('gold-border');
-        body.classList.add('ragie-shake');
-        setTimeout(() => body.classList.remove('ragie-shake'), 400);
-      } else {
-        vibrate([60, 40, 60]);
-        playOutcomeSound(false);
-        body.classList.add('gold-glow');
-        app.classList.add('gold-border');
-      }
-    }
-
-    function selectTile(idx, selectedYes) {
-      if (evaluatedState[idx] !== null) return;
-      const item = currentGrid[idx];
-      buttonsPushed++;
-      totalAnswers++;
-
-      let isPinkCringe = false;
-      if (item.isFree) {
-        isPinkCringe = false;
-      } else if (item.isWagieTile) {
-        isPinkCringe = selectedYes;
-      } else {
-        isPinkCringe = !selectedYes;
+    function renderQuestion() {
+      if (currentIndex >= DIAGNOSTIC_QUESTIONS.length) {
+        showFinalCategory();
+        return;
       }
 
-      evaluatedState[idx] = isPinkCringe ? 'wagie' : 'neet';
+      const q = DIAGNOSTIC_QUESTIONS[currentIndex];
+      document.getElementById('qText').innerText = q.q;
+      document.getElementById('qContext').innerText = q.context;
+      document.getElementById('diagProgress').innerText = `TEST ${currentIndex + 1}/${DIAGNOSTIC_QUESTIONS.length}`;
 
-      const cell = document.getElementById(`cell-${idx}`);
-      const tf = cell.querySelector('.tf-controls');
-      if (tf) tf.style.display = 'none';
-
-      const banner = document.getElementById('responseBanner');
-      const bannerText = document.getElementById('algospeakText');
-      const bannerIcon = document.getElementById('responseIcon');
-
-      if (isPinkCringe) {
-        wagieCount++; netBalance++; hours += 2;
-        cell.classList.add('evaluated-correct');
-        bannerIcon.innerText = "🤡";
-        bannerText.innerText = `${item.exp} STATUS: Stairmaster Narcissist trait confirmed!`;
-      } else {
-        neetCount++; netBalance--; tendies += 500; fries += 10; sauce += 1;
-        cell.classList.add('evaluated-wrong');
-        bannerIcon.innerText = "🔥";
-        bannerText.innerText = `${item.exp} STATUS: Counterculture integrity intact!`;
-      }
-
-      triggerEffects(isPinkCringe);
-      banner.classList.add('show');
-      updateMetrics();
-
-      if (checkMeterMax()) return;
-      if (checkBingo()) return;
-      if (buttonsPushed >= 25) launchSpecificModal('npcButtonPusherModal', [100, 50, 100, 50, 100], "BOOMERVISION AUTOMATON UNLOCKED");
+      updateTrackerBars();
     }
 
-    function checkMeterMax() {
-      const scaleMax = 12;
-      if (Math.abs(netBalance) >= scaleMax) {
-        if (netBalance >= scaleMax) {
-          launchSpecificModal('boomerMeterModal', [400, 100, 400], "PEAK CARLIN BOOMER OVERLOAD");
-        } else {
-          launchSpecificModal('rizzGodMeterModal', [100, 50, 100, 50, 200, 50, 300], "CARLIN ANTI ESTABLISHMENT LEGEND");
-        }
-        return true;
-      }
-      return false;
+    function processAnswer(isYes) {
+      initAudio();
+      turnDial();
+      triggerStaticEffect();
+
+      const q = DIAGNOSTIC_QUESTIONS[currentIndex];
+      const selectedCat = isYes ? q.yesCat : q.noCat;
+      const voicePhrase = isYes ? q.voiceYes : q.voiceNo;
+
+      categoryScores[selectedCat]++;
+
+      speakTvVoice(voicePhrase);
+
+      currentIndex++;
+      setTimeout(renderQuestion, 200);
     }
 
-    function checkBingo() {
-      const lines = [
-        [0,1,2,3,4], [5,6,7,8,9], [10,11,12,13,14], [15,16,17,18,19], [20,21,22,23,24],
-        [0,5,10,15,20], [1,6,11,16,21], [2,7,12,17,22], [3,8,13,18,23], [4,9,14,19,24],
-        [0,6,12,18,24], [4,8,12,16,20]
-      ];
+    function updateTrackerBars() {
+      const total = Math.max(currentIndex, 1);
+      document.getElementById('cat1Bar').style.width = ((categoryScores.stairmaster / 10) * 100) + '%';
+      document.getElementById('cat2Bar').style.width = ((categoryScores.survivor / 10) * 100) + '%';
+      document.getElementById('cat3Bar').style.width = ((categoryScores.automaton / 10) * 100) + '%';
+    }
 
-      for (let l of lines) {
-        if (l.every(i => evaluatedState[i] !== null)) {
-          const first = evaluatedState[l[0]];
-          if (l.every(i => evaluatedState[i] === first || i === 12)) {
-            if (first === 'wagie') {
-              launchSpecificModal('boomerBingoModal', [300, 100, 300], "STAIRMASTER NARCISSIST BINGO");
-            } else {
-              launchSpecificModal('rizzBingoModal', [100, 50, 150, 50, 200], "COUNTERCULTURE SURVIVOR BINGO");
-            }
-            return true;
-          }
+    function showFinalCategory() {
+      const modal = document.getElementById('resultModal');
+      const title = document.getElementById('resTitle');
+      const desc = document.getElementById('resDesc');
+      const stats = document.getElementById('resStats');
+
+      let winner = 'survivor';
+      let maxScore = -1;
+
+      for (let cat in categoryScores) {
+        if (categoryScores[cat] > maxScore) {
+          maxScore = categoryScores[cat];
+          winner = cat;
         }
       }
-      return false;
-    }
 
-    function launchSpecificModal(modalId, vibePattern, speechAnnounce) {
-      vibrate(vibePattern);
-      playBingoChime();
-      populateModalStats(modalId);
-      if (speechAnnounce) speakText(speechAnnounce);
-      openModal(modalId);
-    }
-
-    function populateModalStats(modalId) {
-      const container = document.querySelector(`#${modalId} .stat-box-container`);
-      if (!container) return;
-
-      const isNeetDominant = neetCount >= wagieCount;
-      const isButtonPusher = (modalId === 'npcButtonPusherModal');
-
-      let html = `<h4 style="color: var(--lead-cyan); margin: 0 0 6px 0; text-align: center;">📈 BOOMER AUDIT METRICS</h4>`;
-
-      for (let i = 1; i <= 10; i++) {
-        const def = ALL_STAT_DEFINITIONS[i - 1];
-        let val = "";
-        if (isButtonPusher) {
-          val = (i === 10) ? "0% (AUTOMATON)" : "9,999 Pushes";
-        } else if (isNeetDominant) {
-          val = def.neetVal(tendies, fries, sauce, hours);
-        } else {
-          val = def.wagieVal(wagieCount, hours);
-        }
-
-        html += `
-          <div class="win-stat-row">
-            <span style="color:var(--subtext)">${i}. ${def.label}:</span>
-            <span style="color:var(--boomer-gold)">${val}</span>
-          </div>
-        `;
-      }
-      container.innerHTML = html;
-    }
-
-    function updateMetrics() {
-      document.getElementById('statTendies').innerText = tendies;
-      document.getElementById('statFries').innerText = fries + " hrs";
-      document.getElementById('statSauce').innerText = sauce;
-      document.getElementById('statHours').innerText = hours;
-      
-      const leftBar = document.getElementById('meterBarLeft');
-      const rightBar = document.getElementById('meterBarRight');
-      const rageFill = document.getElementById('rageBarFill');
-
-      const scaleMax = 12;
-
-      if (netBalance < 0) {
-        const leftWidth = Math.min(Math.abs(netBalance) / scaleMax * 50, 50);
-        leftBar.style.width = leftWidth + '%';
-        rightBar.style.width = '0%';
+      if (winner === 'stairmaster') {
+        title.innerText = "CATEGORY: STAIRMASTER NARCISSIST";
+        title.style.color = "var(--crt-red)";
+        desc.innerText = "DIAGNOSIS COMPLETE: You have fully converted from 1970s counterculture into George Carlin's ultimate self-righteous scold archetype! You clutched the hierarchy and pulled up every economic ladder behind you.";
+        speakTvVoice("Diagnostic complete. Classification: Stairmaster Narcissist.");
+      } else if (winner === 'automaton') {
+        title.innerText = "CATEGORY: CABLE NEWS AUTOMATON";
+        title.style.color = "var(--crt-amber)";
+        desc.innerText = "DIAGNOSIS COMPLETE: Your neural pathway is hardlocked to 24/7 Boomervision. Broadcast signals dictate your outlook, neighborhood complaints, and nostalgic revisionism!";
+        speakTvVoice("Diagnostic complete. Classification: Cable News Automaton.");
       } else {
-        const rightWidth = Math.min(netBalance / scaleMax * 50, 50);
-        rightBar.style.width = rightWidth + '%';
-        leftBar.style.width = '0%';
+        title.innerText = "CATEGORY: COUNTERCULTURE SURVIVOR";
+        title.style.color = "var(--crt-green)";
+        desc.innerText = "DIAGNOSIS COMPLETE: Maximum Aura! You rejected the middle-age scold pivot, kept your anti-establishment integrity, and refused to hoard generational wealth.";
+        speakTvVoice("Diagnostic complete. Classification: Counterculture Survivor.");
       }
 
-      const ragePct = totalAnswers > 0 ? Math.round((wagieCount / totalAnswers) * 100) : 0;
-      rageFill.style.width = ragePct + '%';
-      document.getElementById('statRage').innerText = ragePct + '%';
-    }
-
-    function loadQuiz() {
-      const q = QUESTIONS[currentQuizIndex];
-      document.getElementById('quizQuestion').innerText = q.q;
-      document.getElementById('quizScoreText').innerText = `SCORE: ${totalAnswers}/${QUESTIONS.length}`;
-      const container = document.getElementById('quizOptionsContainer');
-      
-      const isSwapped = Math.random() < 0.5;
-      const firstOpt = isSwapped ? q.optionB : q.optionA;
-      const secondOpt = isSwapped ? q.optionA : q.optionB;
-
-      container.innerHTML = `
-        <button class="btn-quiz-yellow" onclick="answerQuiz(${firstOpt.isWagie})">${firstOpt.text}</button>
-        <button class="btn-quiz-yellow" onclick="answerQuiz(${secondOpt.isWagie})">${secondOpt.text}</button>
+      stats.innerHTML = `
+        STAIRMASTER NARCISSIST SCORE: ${categoryScores.stairmaster}/10<br>
+        CABLE NEWS AUTOMATON SCORE: ${categoryScores.automaton}/10<br>
+        COUNTERCULTURE SURVIVOR SCORE: ${categoryScores.survivor}/10
       `;
+
+      modal.style.display = 'flex';
     }
 
-    function answerQuiz(isWagie) {
-      totalAnswers++;
-      const q = QUESTIONS[currentQuizIndex];
-      const banner = document.getElementById('responseBanner');
-      const bannerText = document.getElementById('algospeakText');
-      const bannerIcon = document.getElementById('responseIcon');
-
-      if (isWagie) {
-        wagieCount++; netBalance++; hours += 1;
-        bannerIcon.innerText = "❌";
-        bannerText.innerText = `${q.explanation} STATUS: Caught in Boomer Hypocrisy!`;
-      } else {
-        neetCount++; netBalance--; tendies += 250; fries += 5; sauce += 1;
-        bannerIcon.innerText = "⚡";
-        bannerText.innerText = `${q.explanation} STATUS: Counterculture survived!`;
-      }
-      triggerEffects(isWagie);
-      banner.classList.add('show');
-      updateMetrics();
-      
-      if (checkMeterMax()) return;
-
-      currentQuizIndex = (currentQuizIndex + 1) % QUESTIONS.length;
-      loadQuiz();
+    function resetDiagnostic() {
+      currentIndex = 0;
+      categoryScores = { stairmaster: 0, survivor: 0, automaton: 0 };
+      document.getElementById('resultModal').style.display = 'none';
+      renderQuestion();
     }
 
-    function openModal(id) {
-      vibrate(40);
-      document.getElementById(id).style.display = 'flex';
-    }
-
-    function closeModal(id) {
-      vibrate(40);
-      document.getElementById(id).style.display = 'none';
-
-      document.body.classList.remove('gold-glow', 'ragie-shake');
-      const app = document.getElementById('appContainer');
-      if (app) app.classList.remove('gold-border', 'maxed-red');
-
-      if (['rizzBingoModal', 'boomerBingoModal', 'rizzGodMeterModal', 'boomerMeterModal', 'npcButtonPusherModal', 'doomerResetModal'].includes(id)) {
-        initGame();
-      }
-    }
-
-    function shareGame() {
-      vibrate(50);
-      if (navigator.share) {
-        navigator.share({ title: 'Boomer Lingo Bingo Maxxing', url: window.location.href });
-      } else {
-        copyText(window.location.href, null);
-        alert("Game link copied to clipboard!");
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', initGame);
+    // Initialize first question on load
+    document.addEventListener('DOMContentLoaded', renderQuestion);
   </script>
 </body>
 </html>
