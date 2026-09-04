@@ -1,40 +1,3731 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOOMERVISION 5x5 DIAGNOSTIC BINGO MATRIX</title>
-  <style>
-    :root { 
-      --tv-casing: #2b1d0c; 
-      --tv-bezel: #1a1107;
-      --screen-bg: #0b0f0a; 
-      --crt-green: #39ff14; 
-      --crt-amber: #ffb700; 
-      --crt-red: #ff2a2a; 
-      --crt-cyan: #00f5ff;
-      --zoomer-magenta: #ff007f;
-      --subtext: #8a9985; 
-    } 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050509">
+<title>BOOMER MINDSET BINGO MAXXING</title>
 
-    * { box-sizing: border-box; font-family: "Courier New", Courier, monospace; } 
-    body { 
-      background-color: #050505; 
-      color: var(--crt-green); 
-      margin: 0; 
-      padding: 6px; 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      min-height: 100vh;
-    } 
+<style>
+/* =========================================================
+   BOOMER MINDSET BINGO MAXXING
+   RETRO CRT EDITION
+   ========================================================= */
 
-    /* Retro TV Cabinet Wrapper */
-    .tv-cabinet {
-      width: 100%; 
-      max-width: 580px; 
-      background: radial-gradient(circle at center, #3d2912 0%, #170d04 100%);
-      border: 10px solid var(--tv-casing);
+:root{
+    --black:#030305;
+    --screen:#070b0e;
+    --panel:#10151a;
+    --panel2:#151b20;
+
+    --cyan:#00f5ff;
+    --pink:#ff008c;
+    --gold:#ffe600;
+    --green:#39ff14;
+    --red:#ff3150;
+    --purple:#b400ff;
+
+    --tv-dark:#16171a;
+    --tv-mid:#292a2d;
+    --tv-light:#48494b;
+
+    --text:#f5f7ff;
+    --muted:#8f99a3;
+
+    --glow-cyan:0 0 12px #00f5ff88,0 0 28px #00f5ff33;
+    --glow-pink:0 0 12px #ff008c88,0 0 28px #ff008c33;
+    --glow-gold:0 0 12px #ffe60088;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    min-height:100%;
+}
+
+body{
+    background:
+        radial-gradient(circle at 50% 0%,#24102c 0%,#09070d 35%,#020204 75%);
+    color:var(--text);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   TV ANTENNA
+   ========================================================= */
+
+.tv-wrapper{
+    width:min(1250px,97vw);
+    margin:80px auto 40px;
+    position:relative;
+}
+
+/* antenna base */
+
+.antenna-base{
+    position:absolute;
+    top:-58px;
+    left:50%;
+    transform:translateX(-50%);
+    width:80px;
+    height:35px;
+
+    background:
+        linear-gradient(180deg,#777,#292929 55%,#111);
+
+    border-radius:50% 50% 15% 15%;
+    border:3px solid #090909;
+
+    box-shadow:
+        0 3px 7px #000,
+        inset 0 2px 3px #aaa;
+}
+
+.antenna{
+    position:absolute;
+    top:-130px;
+    left:50%;
+    width:260px;
+    height:150px;
+    transform:translateX(-50%);
+    pointer-events:none;
+}
+
+.antenna::before,
+.antenna::after{
+    content:"";
+    position:absolute;
+    bottom:5px;
+    width:7px;
+    height:145px;
+
+    background:
+        linear-gradient(90deg,#171717,#c4c4c4,#444,#d4d4d4);
+
+    border-radius:10px;
+    border:1px solid #111;
+
+    box-shadow:
+        2px 3px 5px #000;
+}
+
+.antenna::before{
+    left:65px;
+    transform:rotate(-31deg);
+    transform-origin:bottom;
+}
+
+.antenna::after{
+    right:65px;
+    transform:rotate(31deg);
+    transform-origin:bottom;
+}
+
+.antenna-ball-left,
+.antenna-ball-right{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#aaa 20%,#555 55%,#151515);
+
+    border:2px solid #111;
+    box-shadow:0 2px 5px #000;
+}
+
+.antenna-ball-left{
+    top:0;
+    left:2px;
+}
+
+.antenna-ball-right{
+    top:0;
+    right:2px;
+}
+
+
+/* =========================================================
+   TELEVISION BODY
+   ========================================================= */
+
+.tv{
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #55565a 0%,
+            #252629 12%,
+            #151619 50%,
+            #303135 88%,
+            #55565a 100%
+        );
+
+    border:8px solid #0a0a0b;
+    border-radius:45px;
+
+    padding:28px;
+
+    box-shadow:
+        0 30px 80px #000,
+        inset 0 0 0 3px #777,
+        inset 0 0 25px #000,
+        0 0 60px #000;
+}
+
+
+/* fake screw heads */
+
+.screw{
+    position:absolute;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle,#aaa 0%,#555 45%,#151515 70%);
+
+    border:1px solid #080808;
+
+    box-shadow:
+        inset 1px 1px 2px #ddd,
+        1px 2px 3px #000;
+}
+
+.screw.tl{top:12px;left:14px}
+.screw.tr{top:12px;right:14px}
+.screw.bl{bottom:12px;left:14px}
+.screw.br{bottom:12px;right:14px}
+
+
+/* =========================================================
+   CRT SCREEN
+   ========================================================= */
+
+.screen-bezel{
+    background:
+        linear-gradient(145deg,#080808,#2b2b2c,#090909);
+
+    border:6px solid #070707;
+    border-radius:40px;
+
+    padding:15px;
+
+    box-shadow:
+        inset 0 0 20px #000,
+        0 0 10px #000;
+}
+
+.crt-screen{
+    position:relative;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #111c20 0%,
+            #05090b 75%
+        );
+
+    border:4px solid #050505;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:
+        inset 0 0 35px #000,
+        inset 0 0 80px #00eaff08,
+        0 0 20px #000;
+}
+
+
+/* CRT scanlines */
+
+.crt-screen::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 3px,
+            #00000018 4px,
+            #00000018 5px
+        );
+
+    pointer-events:none;
+    z-index:50;
+}
+
+
+/* CRT glow */
+
+.crt-screen::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            ellipse,
+            transparent 45%,
+            #00000055 100%
+        );
+
+    pointer-events:none;
+    z-index:51;
+}
+
+
+/* =========================================================
+   GAME INTERFACE
+   ========================================================= */
+
+.game{
+    position:relative;
+    z-index:5;
+
+    padding:20px;
+}
+
+
+/* Header */
+
+.game-header{
+    text-align:center;
+
+    border:2px solid var(--pink);
+
+    background:
+        linear-gradient(
+            180deg,
+            #241020,
+            #0b0d10
+        );
+
+    border-radius:9px;
+
+    padding:13px 10px;
+
+    box-shadow:
+        var(--glow-pink),
+        inset 0 0 20px #ff008c0d;
+}
+
+.logo{
+    font-size:
+        clamp(1.25rem,4vw,2.7rem);
+
+    font-weight:1000;
+
+    letter-spacing:2px;
+
+    color:var(--gold);
+
+    text-shadow:
+        3px 3px 0 #725b00,
+        0 0 10px #ffe60088,
+        0 0 25px #ffe60033;
+}
+
+.subtitle{
+    color:var(--cyan);
+    font-size:.75rem;
+    font-weight:1000;
+    letter-spacing:2px;
+    margin-top:4px;
+}
+
+.warning{
+    color:#ff6d83;
+    font-size:.55rem;
+    margin-top:6px;
+}
+
+
+/* =========================================================
+   RESPONSE BANNER
+   ========================================================= */
+
+.response{
+    display:none;
+
+    margin-top:9px;
+
+    padding:9px;
+
+    border:1px solid var(--cyan);
+
+    background:#061317;
+
+    border-radius:7px;
+
+    text-align:center;
+
+    box-shadow:var(--glow-cyan);
+
+    font-size:.68rem;
+    font-weight:900;
+}
+
+.response.show{
+    display:block;
+}
+
+.response.boomer{
+    border-color:var(--pink);
+    box-shadow:var(--glow-pink);
+}
+
+.response-icon{
+    font-size:1.25rem;
+    margin-right:6px;
+}
+
+
+/* =========================================================
+   REALITY METER
+   ========================================================= */
+
+.meter-panel{
+    margin-top:9px;
+
+    background:#090d10;
+
+    border:1px solid #353b41;
+
+    border-radius:8px;
+
+    padding:9px;
+}
+
+.meter-title{
+    text-align:center;
+
+    color:var(--gold);
+
+    font-size:.72rem;
+    font-weight:1000;
+
+    letter-spacing:1px;
+}
+
+.meter-labels{
+    display:flex;
+    justify-content:space-between;
+
+    margin:6px 2px 3px;
+
+    font-size:.52rem;
+    font-weight:1000;
+}
+
+.meter-labels .reality{
+    color:var(--cyan);
+}
+
+.meter-labels .boomer{
+    color:var(--pink);
+}
+
+.meter{
+    position:relative;
+
+    height:17px;
+
+    background:#030405;
+
+    border:1px solid #50565b;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.meter-left{
+    position:absolute;
+
+    right:50%;
+    top:0;
+
+    height:100%;
+    width:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #008cff,
+            var(--cyan)
+        );
+
+    transition:.35s;
+}
+
+.meter-right{
+    position:absolute;
+
+    left:50%;
+    top:0;
+
+    height:100%;
+    width:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--red)
+        );
+
+    transition:.35s;
+}
+
+.meter-center{
+    position:absolute;
+
+    left:50%;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:#fff;
+
+    box-shadow:0 0 5px #fff;
+
+    z-index:3;
+}
+
+.meter-caption{
+    text-align:center;
+
+    color:#89949d;
+
+    font-size:.5rem;
+
+    margin-top:4px;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(8,1fr);
+
+    gap:4px;
+
+    margin-top:8px;
+}
+
+.stat{
+    min-width:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #14191d,
+            #090c0e
+        );
+
+    border:1px solid #30373c;
+
+    border-radius:5px;
+
+    padding:5px 2px;
+
+    text-align:center;
+}
+
+.stat-name{
+    color:#7e8a93;
+
+    font-size:.40rem;
+
+    font-weight:1000;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.stat-value{
+    color:var(--gold);
+
+    font-size:.75rem;
+
+    font-weight:1000;
+
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   BINGO BOARD
+   ========================================================= */
+
+.board-heading{
+    text-align:center;
+
+    color:var(--cyan);
+
+    font-size:.85rem;
+
+    font-weight:1000;
+
+    margin:10px 0 3px;
+
+    letter-spacing:1px;
+}
+
+.board-help{
+    text-align:center;
+
+    color:#7f8990;
+
+    font-size:.48rem;
+
+    margin-bottom:6px;
+}
+
+.board{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:4px;
+}
+
+
+/* tiles */
+
+.tile{
+    position:relative;
+
+    min-height:104px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #161c20,
+            #080b0d
+        );
+
+    border:1px solid #3b4349;
+
+    border-radius:6px;
+
+    padding:5px 3px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    text-align:center;
+
+    transition:.18s;
+
+    box-shadow:
+        inset 0 0 12px #000;
+}
+
+.tile:hover{
+    border-color:var(--cyan);
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 0 10px #00f5ff33,
+        inset 0 0 12px #000;
+}
+
+.tile.free{
+    border-color:var(--gold);
+
+    box-shadow:
+        0 0 12px #ffe60033,
+        inset 0 0 12px #000;
+}
+
+.tile-icon{
+    font-size:1.25rem;
+}
+
+.tile-text{
+    min-height:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:.46rem;
+
+    line-height:1.12;
+
+    font-weight:1000;
+}
+
+.tile-controls{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:2px;
+}
+
+.choice{
+    padding:5px 1px;
+
+    background:#090b0c;
+
+    border:1px solid;
+
+    border-radius:3px;
+
+    font-size:.40rem;
+
+    font-weight:1000;
+
+    transition:.15s;
+}
+
+.choice:hover{
+    background:#20272b;
+}
+
+.choice.yes{
+    color:#ff59ad;
+    border-color:var(--pink);
+}
+
+.choice.no{
+    color:#52f5ff;
+    border-color:var(--cyan);
+}
+
+.tile.boomer{
+    border-color:var(--pink);
+
+    background:
+        linear-gradient(
+            145deg,
+            #321022,
+            #0e080c
+        );
+
+    box-shadow:
+        0 0 12px #ff008c44;
+}
+
+.tile.reality{
+    border-color:var(--cyan);
+
+    background:
+        linear-gradient(
+            145deg,
+            #09272c,
+            #070c0e
+        );
+
+    box-shadow:
+        0 0 12px #00f5ff44;
+}
+
+.tile-result{
+    font-size:.40rem;
+    font-weight:1000;
+}
+
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+.quiz{
+    margin-top:9px;
+
+    border:1px solid var(--purple);
+
+    background:
+        linear-gradient(
+            180deg,
+            #170c1e,
+            #09090c
+        );
+
+    border-radius:7px;
+
+    padding:9px;
+
+    box-shadow:
+        0 0 12px #b400ff33;
+}
+
+.quiz-top{
+    display:flex;
+    justify-content:space-between;
+
+    color:var(--gold);
+
+    font-size:.55rem;
+
+    font-weight:1000;
+}
+
+.quiz-question{
+    text-align:center;
+
+    font-size:.57rem;
+
+    line-height:1.3;
+
+    font-weight:900;
+
+    margin:8px 10px;
+}
+
+.quiz-options{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:4px;
+}
+
+.quiz-button{
+    border:1px solid var(--gold);
+
+    color:var(--gold);
+
+    background:#121006;
+
+    border-radius:4px;
+
+    padding:7px 4px;
+
+    font-size:.46rem;
+
+    font-weight:1000;
+}
+
+.quiz-button:hover{
+    background:#2b2608;
+}
+
+
+/* =========================================================
+   BOTTOM GAME CONTROLS
+   ========================================================= */
+
+.game-controls{
+    display:flex;
+
+    justify-content:center;
+
+    gap:6px;
+
+    flex-wrap:wrap;
+
+    margin-top:9px;
+}
+
+.game-button{
+    border:1px solid var(--cyan);
+
+    color:var(--cyan);
+
+    background:#071216;
+
+    border-radius:4px;
+
+    padding:6px 12px;
+
+    font-size:.48rem;
+
+    font-weight:1000;
+
+    box-shadow:0 0 6px #00f5ff22;
+}
+
+.game-button:hover{
+    background:#11282e;
+}
+
+.game-button.gold{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.game-button.pink{
+    border-color:var(--pink);
+    color:var(--pink);
+}
+
+
+/* =========================================================
+   TV CONTROL PANEL
+   ========================================================= */
+
+.tv-controls{
+    margin-top:20px;
+
+    min-height:125px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #303134,
+            #17181a 55%,
+            #0d0e10
+        );
+
+    border-top:4px solid #555;
+
+    border-radius:12px 12px 28px 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:clamp(20px,5vw,70px);
+
+    padding:14px;
+
+    box-shadow:
+        inset 0 5px 10px #000,
+        inset 0 -8px 15px #000;
+}
+
+
+/* speaker */
+
+.speaker{
+    width:130px;
+    height:72px;
+
+    border:3px solid #111;
+
+    border-radius:7px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #050505 0px,
+            #050505 5px,
+            #252525 6px,
+            #252525 9px
+        );
+
+    box-shadow:
+        inset 0 0 8px #000;
+}
+
+
+/* knob assembly */
+
+.knob-group{
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.knob-wrap{
+    text-align:center;
+}
+
+.knob-label{
+    color:#aaa;
+
+    font-size:.48rem;
+
+    font-weight:1000;
+
+    margin-bottom:6px;
+
+    letter-spacing:1px;
+}
+
+.knob{
+    position:relative;
+
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d4d4d4 0%,
+            #8c8c8c 15%,
+            #414141 45%,
+            #151515 72%,
+            #050505 100%
+        );
+
+    border:4px solid #080808;
+
+    box-shadow:
+        2px 4px 7px #000,
+        inset 2px 2px 3px #ddd,
+        inset -3px -4px 5px #000;
+
+    transition:.15s;
+}
+
+.knob::after{
+    content:"";
+
+    position:absolute;
+
+    top:7px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:4px;
+    height:18px;
+
+    background:#111;
+
+    border-radius:4px;
+}
+
+.knob:hover{
+    transform:rotate(15deg);
+}
+
+.knob.small{
+    width:48px;
+    height:48px;
+}
+
+
+/* power light */
+
+.power{
+    text-align:center;
+}
+
+.power-button{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:4px solid #090909;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ff7676,
+            #a90000 50%,
+            #280000
+        );
+
+    box-shadow:
+        0 0 8px #ff003344,
+        inset 2px 2px 3px #ffaaaa,
+        2px 3px 5px #000;
+}
+
+.power-label{
+    color:#999;
+
+    font-size:.45rem;
+
+    margin-top:4px;
+
+    font-weight:1000;
+}
+
+
+/* =========================================================
+   TV BRAND
+   ========================================================= */
+
+.tv-brand{
+    position:absolute;
+
+    bottom:7px;
+    left:28px;
+
+    color:#8d8d8d;
+
+    font-size:.48rem;
+
+    letter-spacing:2px;
+
+    font-weight:1000;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    background:#000d;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+}
+
+.modal-box{
+    width:min(700px,96vw);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #2b102d,
+            #0a0a0e 70%
+        );
+
+    border:3px solid var(--pink);
+
+    border-radius:13px;
+
+    padding:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 0 40px #ff008c77;
+}
+
+.modal-icon{
+    font-size:4rem;
+}
+
+.modal-title{
+    color:var(--gold);
+
+    font-size:
+        clamp(1.4rem,5vw,2.6rem);
+
+    font-weight:1000;
+
+    text-shadow:
+        0 0 15px #ffe60077;
+}
+
+.modal-sub{
+    color:var(--cyan);
+
+    font-size:.75rem;
+
+    font-weight:1000;
+
+    margin:6px;
+}
+
+.final-stats{
+    max-width:570px;
+
+    margin:15px auto;
+
+    background:#070709;
+
+    border:1px solid #3c4148;
+
+    border-radius:7px;
+
+    padding:8px;
+
+    text-align:left;
+}
+
+.final-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    border-bottom:1px solid #25272b;
+
+    padding:7px 2px;
+
+    font-size:.62rem;
+}
+
+.final-row:last-child{
+    border-bottom:0;
+}
+
+.final-row span:first-child{
+    color:#8c959d;
+}
+
+.final-row span:last-child{
+    color:var(--gold);
+
+    font-weight:1000;
+
+    text-align:right;
+}
+
+.modal-quote{
+    color:#e9edf1;
+
+    font-size:.72rem;
+
+    font-style:italic;
+
+    line-height:1.45;
+
+    margin:13px;
+}
+
+
+/* =========================================================
+   CRT EFFECTS
+   ========================================================= */
+
+.shake{
+    animation:
+        tvShake .3s;
+}
+
+@keyframes tvShake{
+    0%,100%{transform:translate(0)}
+    25%{transform:translate(-3px,1px)}
+    50%{transform:translate(3px,-1px)}
+    75%{transform:translate(-2px,1px)}
+}
+
+.screen-flash{
+    animation:
+        screenFlash .35s;
+}
+
+@keyframes screenFlash{
+    0%{
+        filter:brightness(1);
+    }
+
+    35%{
+        filter:brightness(2.5);
+    }
+
+    100%{
+        filter:brightness(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .tv-wrapper{
+        margin-top:65px;
+    }
+
+    .tv{
+        padding:16px;
+        border-radius:30px;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
+    .tile{
+        min-height:95px;
+    }
+
+    .tv-controls{
+        gap:20px;
+    }
+
+    .speaker{
+        width:80px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .tv-wrapper{
+        width:100%;
+        margin-top:55px;
+    }
+
+    .tv{
+        border-width:5px;
+        padding:8px;
+        border-radius:22px;
+    }
+
+    .screen-bezel{
+        padding:7px;
+        border-width:4px;
+        border-radius:25px;
+    }
+
+    .game{
+        padding:8px;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
+    .stat-name{
+        font-size:.34rem;
+    }
+
+    .stat-value{
+        font-size:.62rem;
+    }
+
+    .tile{
+        min-height:82px;
+    }
+
+    .tile-icon{
+        font-size:1rem;
+    }
+
+    .tile-text{
+        font-size:.37rem;
+    }
+
+    .choice{
+        font-size:.34rem;
+        padding:4px 1px;
+    }
+
+    .board{
+        gap:2px;
+    }
+
+    .quiz-options{
+        grid-template-columns:1fr;
+    }
+
+    .tv-controls{
+        min-height:95px;
+        gap:12px;
+        padding:8px;
+    }
+
+    .speaker{
+        display:none;
+    }
+
+    .knob{
+        width:48px;
+        height:48px;
+    }
+
+    .knob.small{
+        width:38px;
+        height:38px;
+    }
+
+    .knob-group{
+        gap:7px;
+    }
+
+    .antenna{
+        transform:
+            translateX(-50%)
+            scale(.7);
+
+        top:-100px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media(max-width:390px){
+
+    .logo{
+        font-size:1.05rem;
+    }
+
+    .subtitle{
+        font-size:.48rem;
+    }
+
+    .warning{
+        font-size:.4rem;
+    }
+
+    .tile{
+        min-height:72px;
+    }
+
+    .tile-icon{
+        font-size:.8rem;
+    }
+
+    .tile-text{
+        font-size:.32rem;
+    }
+
+    .choice{
+        font-size:.29rem;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="tv-wrapper">
+
+    <!-- =====================================================
+         ANTENNA
+         ===================================================== -->
+
+    <div class="antenna">
+        <div class="antenna-ball-left"></div>
+        <div class="antenna-ball-right"></div>
+    </div>
+
+    <div class="antenna-base"></div>
+
+
+    <!-- =====================================================
+         TELEVISION
+         ===================================================== -->
+
+    <div class="tv">
+
+        <div class="screw tl"></div>
+        <div class="screw tr"></div>
+        <div class="screw bl"></div>
+        <div class="screw br"></div>
+
+
+        <!-- =================================================
+             CRT SCREEN
+             ================================================= -->
+
+        <div class="screen-bezel">
+
+            <div class="crt-screen">
+
+                <div class="game">
+
+                    <!-- HEADER -->
+
+                    <header class="game-header">
+
+                        <div class="logo">
+                            BOOMER MINDSET BINGO MAXXING
+                        </div>
+
+                        <div class="subtitle">
+                            THE GENERATIONAL REALITY CHECK ARCADE
+                        </div>
+
+                        <div class="warning">
+                            ⚠️ EXAGGERATED MEME STEREOTYPES — NOT EVERY BOOMER IS LIKE THIS ⚠️
+                        </div>
+
+                    </header>
+
+
+                    <!-- RESPONSE -->
+
+                    <div id="response" class="response">
+
+                        <span id="responseIcon"
+                              class="response-icon">
+                            👴
+                        </span>
+
+                        <span id="responseText">
+                            BOOMER TAKE DETECTED.
+                        </span>
+
+                    </div>
+
+
+                    <!-- METER -->
+
+                    <section class="meter-panel">
+
+                        <div class="meter-title">
+                            ⚖️ BOOMER REALITY CHECK
+                        </div>
+
+                        <div class="meter-labels">
+
+                            <span class="reality">
+                                🧠 GENERATIONAL REALITY
+                            </span>
+
+                            <span class="boomer">
+                                👴 BOOMER DELUSION
+                            </span>
+
+                        </div>
+
+                        <div class="meter">
+
+                            <div id="meterLeft"
+                                 class="meter-left">
+                            </div>
+
+                            <div id="meterRight"
+                                 class="meter-right">
+                            </div>
+
+                            <div class="meter-center"></div>
+
+                        </div>
+
+                        <div class="meter-caption">
+
+                            BOOMER TAKE DENSITY:
+                            <span id="ragePercent">0%</span>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- STATS -->
+
+                    <section class="stats">
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                BOOMER TAKES
+                            </div>
+                            <div id="statBoomer"
+                                 class="stat-value">
+                                0
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                REALITY CHECKS
+                            </div>
+                            <div id="statReality"
+                                 class="stat-value">
+                                0
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                BACK IN MY DAY
+                            </div>
+                            <div id="statDay"
+                                 class="stat-value">
+                                0
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                BOOTSTRAPS
+                            </div>
+                            <div id="statBoot"
+                                 class="stat-value">
+                                0
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                HOUSING AMNESIA
+                            </div>
+                            <div id="statHouse"
+                                 class="stat-value">
+                                0%
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                WAGE IGNORANCE
+                            </div>
+                            <div id="statWage"
+                                 class="stat-value">
+                                0%
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                OFFICE LOYALTY
+                            </div>
+                            <div id="statOffice"
+                                 class="stat-value">
+                                0
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-name">
+                                CONTRADICTIONS
+                            </div>
+                            <div id="statContradictions"
+                                 class="stat-value">
+                                0
+                            </div>
+                        </div>
+
+                    </section>
+
+
+                    <!-- BOARD -->
+
+                    <div class="board-heading">
+                        🎰 BOOMER MINDSET BINGO
+                    </div>
+
+                    <div class="board-help">
+                        YES = “THAT'S A BOOMER TAKE”
+                        &nbsp; • &nbsp;
+                        NO = “THAT'S ACTUALLY FAIR”
+                    </div>
+
+                    <div id="board"
+                         class="board">
+                    </div>
+
+
+                    <!-- QUIZ -->
+
+                    <section class="quiz">
+
+                        <div class="quiz-top">
+
+                            <span>
+                                🧠 BOOMER LOGIC TEST
+                            </span>
+
+                            <span id="quizScore">
+                                QUESTION 1/10
+                            </span>
+
+                        </div>
+
+                        <div id="quizQuestion"
+                             class="quiz-question">
+                        </div>
+
+                        <div id="quizOptions"
+                             class="quiz-options">
+                        </div>
+
+                    </section>
+
+
+                    <!-- CONTROLS -->
+
+                    <div class="game-controls">
+
+                        <button
+                            class="game-button gold"
+                            onclick="newGame()">
+
+                            🎰 NEW BOARD
+
+                        </button>
+
+                        <button
+                            class="game-button"
+                            onclick="shareGame()">
+
+                            📤 SHARE FLEX
+
+                        </button>
+
+                        <button
+                            class="game-button pink"
+                            onclick="resetGame()">
+
+                            🔄 RESET
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PHYSICAL TV CONTROL PANEL
+             ================================================= -->
+
+        <div class="tv-controls">
+
+            <div class="speaker"></div>
+
+
+            <div class="knob-group">
+
+                <div class="knob-wrap">
+
+                    <div class="knob-label">
+                        VOLUME
+                    </div>
+
+                    <div
+                        class="knob"
+                        onclick="knobSound()">
+                    </div>
+
+                </div>
+
+
+                <div class="knob-wrap">
+
+                    <div class="knob-label">
+                        CHANNEL
+                    </div>
+
+                    <div
+                        class="knob"
+                        onclick="changeChannel()">
+                    </div>
+
+                </div>
+
+
+                <div class="knob-wrap">
+
+                    <div class="knob-label">
+                        TUNING
+                    </div>
+
+                    <div
+                        class="knob small"
+                        onclick="tuningEffect()">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="power">
+
+                <div
+                    class="power-button"
+                    onclick="newGame()">
+                </div>
+
+                <div class="power-label">
+                    POWER
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="tv-brand">
+            D.K.F. INDUSTRIES • MODEL 1983-MAXX
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     END GAME MODAL
+     ========================================================= -->
+
+<div id="modal"
+     class="modal">
+
+    <div class="modal-box">
+
+        <div id="modalIcon"
+             class="modal-icon">
+            👴
+        </div>
+
+        <div id="modalTitle"
+             class="modal-title">
+            OK BOOMER BINGO
+        </div>
+
+        <div id="modalSub"
+             class="modal-sub">
+            GENERATIONAL LOGIC HAS REACHED MAXIMUM CAPACITY
+        </div>
+
+        <div id="finalStats"
+             class="final-stats">
+        </div>
+
+        <div id="modalQuote"
+             class="modal-quote">
+        </div>
+
+        <button
+            class="game-button gold"
+            onclick="closeModal();newGame()">
+
+            🎰 RUN IT BACK
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   GAME DATA
+   ========================================================= */
+
+const GRID_ITEMS = [
+
+    {
+        t:"JUST BUY A HOUSE",
+        i:"🏠",
+        b:true,
+        e:"Starter home detected. Current market data has been ignored."
+    },
+
+    {
+        t:"NO ONE WANTS TO WORK",
+        i:"💼",
+        b:true,
+        e:"Wages have mysteriously disappeared from the conversation."
+    },
+
+    {
+        t:"I PAID $12 FOR COLLEGE",
+        i:"🎓",
+        b:true,
+        e:"A 1970s receipt has been submitted as evidence for 2026."
+    },
+
+    {
+        t:"STOP BUYING AVOCADO TOAST",
+        i:"🥑",
+        b:true,
+        e:"One brunch has been blamed for the housing crisis."
+    },
+
+    {
+        t:"MY HOUSE COST $35K",
+        i:"💵",
+        b:true,
+        e:"Inflation has been asked to leave the discussion."
+    },
+
+    {
+        t:"WORK FROM HOME ISN'T REAL WORK",
+        i:"🏢",
+        b:true,
+        e:"The office has been declared sacred ground."
+    },
+
+    {
+        t:"JUST MOVE SOMEWHERE CHEAPER",
+        i:"🚚",
+        b:true,
+        e:"Jobs, family, friends and community have been marked optional."
+    },
+
+    {
+        t:"PULL YOURSELF UP BY YOUR BOOTSTRAPS",
+        i:"🥾",
+        b:true,
+        e:"Boot physics have been suspended."
+    },
+
+    {
+        t:"FACEBOOK IS THE NEWS",
+        i:"📘",
+        b:true,
+        e:"Three memes and an uncle are now an accredited newsroom."
+    },
+
+    {
+        t:"FIRM HANDSHAKE = JOB",
+        i:"🤝",
+        b:true,
+        e:"The handshake has received an MBA."
+    },
+
+    {
+        t:"WE DIDN'T HAVE THE INTERNET",
+        i:"📺",
+        b:true,
+        e:"Dial-up survivor bonus activated."
+    },
+
+    {
+        t:"KIDS ARE TOO SENSITIVE",
+        i:"😤",
+        b:true,
+        e:"Language evolution has been rejected."
+    },
+
+    {
+        t:"JUST WORK HARDER",
+        i:"⛏️",
+        b:true,
+        e:"Macroeconomics has been assigned to one employee."
+    },
+
+    {
+        t:"BACK IN MY DAY...",
+        i:"👴",
+        b:true,
+        e:"Generational anecdote engine warming up."
+    },
+
+    {
+        t:"TURN OFF THE LIGHTS",
+        i:"💡",
+        b:true,
+        e:"Three cents of electricity have been saved."
+    },
+
+    {
+        t:"CANCEL CULTURE!",
+        i:"📣",
+        b:true,
+        e:"The block button has become a constitutional crisis."
+    },
+
+    {
+        t:"KIDS DON'T WANT TO WORK",
+        i:"🧑‍💻",
+        b:true,
+        e:"Entry-level job requires five years experience and is somehow still the kid's fault."
+    },
+
+    {
+        t:"RENTING IS THROWING MONEY AWAY",
+        i:"🔑",
+        b:true,
+        e:"Taxes, maintenance, interest and insurance have exited the chat."
+    },
+
+    {
+        t:"MY 401K DID IT ALL",
+        i:"📈",
+        b:true,
+        e:"Retirement confidence has entered legendary difficulty."
+    },
+
+    {
+        t:"WALK IT OFF",
+        i:"🚶",
+        b:true,
+        e:"Universal solution successfully deployed."
+    },
+
+    {
+        t:"CALLING IS BETTER THAN TEXTING",
+        i:"☎️",
+        b:true,
+        e:"A surprise phone call has been scheduled."
+    },
+
+    {
+        t:"WE LEFT THE HOUSE ALL DAY",
+        i:"🚲",
+        b:true,
+        e:"Childhood anecdote upgraded to modern parenting policy."
+    },
+
+    {
+        t:"JUST QUIT YOUR JOB",
+        i:"🚪",
+        b:true,
+        e:"Rent and health insurance have been marked irrelevant."
+    },
+
+    {
+        t:"SOCIAL MEDIA IS RUINING EVERYTHING",
+        i:"📱",
+        b:true,
+        e:"Facebook usage has mysteriously been excluded."
+    },
+
+    {
+        t:"SUBSCRIPTIONS ARE A SCAM",
+        i:"💳",
+        b:false,
+        e:"This one might actually have a point."
+    },
+
+    {
+        t:"EVERYTHING WAS BETTER BEFORE THE INTERNET",
+        i:"📻",
+        b:true,
+        e:"Nostalgia has reached maximum resolution."
+    },
+
+    {
+        t:"KIDS TODAY HAVE IT EASY",
+        i:"😎",
+        b:true,
+        e:"Convenience and affordability have been confused."
+    },
+
+    {
+        t:"I DON'T NEED A PASSWORD MANAGER",
+        i:"🔐",
+        b:true,
+        e:"The dog's name and birth year are back in circulation."
+    },
+
+    {
+        t:"THERAPY? JUST TOUGHEN UP",
+        i:"🧠",
+        b:true,
+        e:"Mental health has been replaced by mowing the lawn."
+    },
+
+    {
+        t:"MY GENERATION NEVER COMPLAINED",
+        i:"📢",
+        b:true,
+        e:"Complaint detected inside complaint."
+    },
+
+    {
+        t:"EVERYONE SHOULD HAVE KIDS",
+        i:"👶",
+        b:true,
+        e:"Childcare costs have been muted."
+    },
+
+    {
+        t:"NEW TECH IS MAKING US DUMB",
+        i:"💻",
+        b:true,
+        e:"Technology criticism posted from a smartphone."
+    },
+
+    {
+        t:"PEOPLE ARE TOO LAZY TO COOK",
+        i:"🍳",
+        b:true,
+        e:"Food prices have been removed from the kitchen."
+    },
+
+    {
+        t:"YOU CAN'T TRUST THE INTERNET",
+        i:"🌐",
+        b:true,
+        e:"Facebook post has been used to establish this fact."
+    },
+
+    {
+        t:"MY GENERATION WORKED UNTIL RETIREMENT",
+        i:"⌛",
+        b:true,
+        e:"The labor market has been transported to another decade."
+    },
+
+    {
+        t:"WHY DOES EVERYONE NEED THERAPY?",
+        i:"🛋️",
+        b:true,
+        e:"Three generations of emotional repression have entered the chat."
+    },
+
+    {
+        t:"WE USED CASH FOR EVERYTHING",
+        i:"💰",
+        b:true,
+        e:"The ancient civilization of physical wallets has been rediscovered."
+    },
+
+    {
+        t:"NOBODY NEEDS TO WORK REMOTELY",
+        i:"💻",
+        b:true,
+        e:"The commute has been upgraded to a character-building exercise."
+    },
+
+    {
+        t:"THE YOUNG PEOPLE NEED TO SAVE MORE",
+        i:"🐖",
+        b:true,
+        e:"Savings advice has arrived without mentioning rent."
+    }
+
+];
+
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+const QUIZ = [
+
+    {
+        q:"Is 'just work harder' incomplete advice when wages and living costs are disconnected?",
+        a:[
+            ["YES — MATH CHECK",false],
+            ["NO — GRIND HARDER",true]
+        ],
+        e:"The grindset has been asked to solve macroeconomics."
+    },
+
+    {
+        q:"Is 'back in my day' usually about to become a universal rule?",
+        a:[
+            ["YES — ANECDOTE INCOMING",false],
+            ["NO — HISTORICAL LAW",true]
+        ],
+        e:"The generational anecdote engine has activated."
+    },
+
+    {
+        q:"Is 'I bought my house for $35K' missing some useful context?",
+        a:[
+            ["YES — CONTEXT MATTERS",false],
+            ["NO — HOUSING WAS ALWAYS EASY",true]
+        ],
+        e:"The year on the mortgage document has been located."
+    },
+
+    {
+        q:"Can younger people struggle financially even if they own a smartphone?",
+        a:[
+            ["YES — PHONES ARE NOT HOUSES",false],
+            ["NO — THEY HAVE IPHONES",true]
+        ],
+        e:"Having a smartphone has failed the affordability test."
+    },
+
+    {
+        q:"Is 'nobody wants to work' incomplete without discussing pay and conditions?",
+        a:[
+            ["YES — ADD THE MATH",false],
+            ["NO — EVERYONE IS LAZY",true]
+        ],
+        e:"Missing variables detected."
+    },
+
+    {
+        q:"Is Facebook also social media?",
+        a:[
+            ["YES — UNCLE DETECTED",false],
+            ["NO — FACEBOOK IS DIFFERENT",true]
+        ],
+        e:"Platform classification complete."
+    },
+
+    {
+        q:"Does 'we didn't have the internet' automatically prove life was better?",
+        a:[
+            ["NO — NOSTALGIA DETECTED",false],
+            ["YES — 1986 WAS PERFECT",true]
+        ],
+        e:"Nostalgia is not peer-reviewed."
+    },
+
+    {
+        q:"Can someone dislike subscriptions while still admitting some are useful?",
+        a:[
+            ["YES — NUANCE UNLOCKED",false],
+            ["NO — SUBSCRIPTIONS ARE EVIL",true]
+        ],
+        e:"Nuance has entered the chat."
+    },
+
+    {
+        q:"Is 'young people don't want families' too simplistic?",
+        a:[
+            ["YES — COSTS EXIST",false],
+            ["NO — BABIES ARE FREE",true]
+        ],
+        e:"The $18 diaper has entered the chat."
+    },
+
+    {
+        q:"Is 'my generation never complained' itself a complaint?",
+        a:[
+            ["YES — RECURSIVE COMPLAINT",false],
+            ["NO — WE WERE TOUGHER",true]
+        ],
+        e:"Complaint successfully detected inside complaint."
+    }
+
+];
+
+
+/* =========================================================
+   GAME STATE
+   ========================================================= */
+
+let board=[];
+let tileState=[];
+
+let boomer=0;
+let reality=0;
+
+let contradictions=0;
+let totalAnswers=0;
+
+let quizIndex=0;
+
+let meter=0;
+
+let dayCount=0;
+let bootstraps=0;
+
+let housing=0;
+let wage=0;
+let office=0;
+
+let gameOver=false;
+
+
+/* =========================================================
+   SHUFFLE
+   ========================================================= */
+
+function shuffle(array){
+
+    const copy=[...array];
+
+    for(let i=copy.length-1;i>0;i--){
+
+        const j=Math.floor(Math.random()*(i+1));
+
+        [copy[i],copy[j]]=
+        [copy[j],copy[i]];
+
+    }
+
+    return copy;
+}
+
+
+/* =========================================================
+   AUDIO
+   ========================================================= */
+
+function beep(
+    frequency=500,
+    duration=.08
+){
+
+    try{
+
+        const AudioContext=
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        if(!AudioContext)return;
+
+        const ctx=
+            new AudioContext();
+
+        const osc=
+            ctx.createOscillator();
+
+        const gain=
+            ctx.createGain();
+
+        osc.type="square";
+
+        osc.frequency.value=
+            frequency;
+
+        gain.gain.value=.025;
+
+        osc.connect(gain);
+
+        gain.connect(ctx.destination);
+
+        osc.start();
+
+        osc.stop(
+            ctx.currentTime+duration
+        );
+
+    }catch(e){}
+
+}
+
+
+function vibrate(pattern=40){
+
+    if(
+        navigator.vibrate
+    ){
+
+        try{
+            navigator.vibrate(pattern);
+        }catch(e){}
+
+    }
+
+}
+
+
+function speak(text){
+
+    if(
+        !("speechSynthesis" in window)
+    )return;
+
+    try{
+
+        speechSynthesis.cancel();
+
+        const utterance=
+            new SpeechSynthesisUtterance(text);
+
+        utterance.rate=.92;
+        utterance.pitch=.78;
+
+        speechSynthesis.speak(
+            utterance
+        );
+
+    }catch(e){}
+
+}
+
+
+/* =========================================================
+   NEW GAME
+   ========================================================= */
+
+function newGame(){
+
+    closeModal();
+
+    gameOver=false;
+
+    board=
+        shuffle(GRID_ITEMS)
+        .slice(0,24);
+
+    board.splice(
+        12,
+        0,
+        {
+            t:"REALITY CHECK",
+            i:"🧠",
+            b:false,
+            free:true,
+            e:"FREE TILE — FACT CHECKING ACTIVATED."
+        }
+    );
+
+    tileState=
+        Array(25).fill(null);
+
+    boomer=0;
+    reality=0;
+    contradictions=0;
+    totalAnswers=0;
+
+    quizIndex=0;
+
+    meter=0;
+
+    dayCount=0;
+    bootstraps=0;
+
+    housing=0;
+    wage=0;
+    office=0;
+
+    renderBoard();
+
+    updateStats();
+
+    loadQuiz();
+
+    document
+        .getElementById("response")
+        .classList.remove("show");
+
+    document
+        .getElementById("response")
+        .classList.remove("boomer");
+
+}
+
+
+/* =========================================================
+   RENDER BOARD
+   ========================================================= */
+
+function renderBoard(){
+
+    const boardElement=
+        document.getElementById("board");
+
+    boardElement.innerHTML="";
+
+    board.forEach(
+        (item,index)=>{
+
+            const tile=
+                document.createElement("div");
+
+            tile.className="tile";
+
+            tile.id=
+                "tile-"+index;
+
+            if(item.free){
+
+                tile.classList.add("free");
+
+                tile.innerHTML=`
+
+                    <div class="tile-icon">
+                        ${item.i}
+                    </div>
+
+                    <div class="tile-text">
+                        ${item.t}
+                    </div>
+
+                    <div class="tile-result">
+                        FREE TILE
+                    </div>
+
+                `;
+
+                tile.onclick=
+                    ()=>{
+                        selectTile(
+                            index,
+                            false
+                        );
+                    };
+
+            }else{
+
+                tile.innerHTML=`
+
+                    <div class="tile-icon">
+                        ${item.i}
+                    </div>
+
+                    <div class="tile-text">
+                        ${item.t}
+                    </div>
+
+                    <div class="tile-controls">
+
+                        <button
+                            class="choice yes"
+                            onclick="selectTile(${index},true)">
+
+                            YES
+
+                        </button>
+
+                        <button
+                            class="choice no"
+                            onclick="selectTile(${index},false)">
+
+                            NO
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            }
+
+            boardElement.appendChild(tile);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SELECT TILE
+   ========================================================= */
+
+function selectTile(
+    index,
+    yes
+){
+
+    if(gameOver)return;
+
+    if(
+        tileState[index]!==null
+    )return;
+
+    const item=
+        board[index];
+
+    /* FREE */
+
+    if(item.free){
+
+        tileState[index]=
+            "reality";
+
+        const tile=
+            document.getElementById(
+                "tile-"+index
+            );
+
+        tile.classList.add(
+            "reality"
+        );
+
+        tile.innerHTML=`
+
+            <div class="tile-icon">
+                🧠
+            </div>
+
+            <div class="tile-text">
+                REALITY CHECK
+            </div>
+
+            <div class="tile-result">
+                🧠 FREE TILE
+            </div>
+
+        `;
+
+        beep(850,.07);
+
+        checkBingo();
+
+        return;
+    }
+
+
+    /*
+        YES =
+        "YES, THIS IS A BOOMER TAKE."
+
+        NO =
+        "NO, THIS IS NOT NECESSARILY
+        A BOOMER TAKE."
+    */
+
+    const isBoomer=
+        yes ? item.b : !item.b;
+
+
+    tileState[index]=
+        isBoomer
+        ? "boomer"
+        : "reality";
+
+
+    totalAnswers++;
+
+
+    const tile=
+        document.getElementById(
+            "tile-"+index
+        );
+
+
+    const controls=
+        tile.querySelector(
+            ".tile-controls"
+        );
+
+    if(controls){
+        controls.remove();
+    }
+
+
+    if(isBoomer){
+
+        boomer++;
+
+        meter++;
+
+        dayCount++;
+
+        bootstraps++;
+
+        if(
+            item.t.includes("HOUSE") ||
+            item.t.includes("RENT")
+        ){
+
+            housing++;
+
+        }
+
+
+        if(
+            item.t.includes("WORK")
+        ){
+
+            office++;
+
+        }
+
+
+        if(
+            item.t.includes("WORK") ||
+            item.t.includes("WAGE")
+        ){
+
+            wage=
+                Math.min(
+                    100,
+                    wage+6
+                );
+
+        }
+
+
+        tile.classList.add(
+            "boomer"
+        );
+
+
+        tile.innerHTML+=`
+
+            <div class="tile-result">
+                👴 BOOMER TAKE CONFIRMED
+            </div>
+
+        `;
+
+
+        showResponse(
+            "👴",
+            item.e+
+            " BOOMER TAKE CONFIRMED: anecdote deployed as evidence.",
+            true
+        );
+
+
+        beep(230,.11);
+
+        vibrate(35);
+
+    }else{
+
+        reality++;
+
+        meter--;
+
+
+        tile.classList.add(
+            "reality"
+        );
+
+
+        tile.innerHTML+=`
+
+            <div class="tile-result">
+                🧠 REALITY CHECK PASSED
+            </div>
+
+        `;
+
+
+        showResponse(
+            "🧠",
+            item.e+
+            " REALITY CHECK: context successfully restored.",
+            false
+        );
+
+
+        beep(850,.08);
+
+        vibrate(20);
+
+    }
+
+
+    detectContradictions();
+
+    updateStats();
+
+    if(
+        checkSpecialEnding()
+    ){
+        return;
+    }
+
+
+    if(
+        checkBingo()
+    ){
+        return;
+    }
+
+
+    if(
+        totalAnswers>=24
+    ){
+
+        gameOver=true;
+
+        setTimeout(
+            ()=>{
+                showEnding(
+                    "npc"
+                );
+            },
+            300
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSE
+   ========================================================= */
+
+function showResponse(
+    icon,
+    text,
+    isBoomer
+){
+
+    const response=
+        document.getElementById(
+            "response"
+        );
+
+    document.getElementById(
+        "responseIcon"
+    ).textContent=icon;
+
+    document.getElementById(
+        "responseText"
+    ).textContent=text;
+
+
+    response.classList.add(
+        "show"
+    );
+
+
+    response.classList.toggle(
+        "boomer",
+        isBoomer
+    );
+
+
+    const screen=
+        document.querySelector(
+            ".crt-screen"
+        );
+
+    screen.classList.remove(
+        "screen-flash"
+    );
+
+    void screen.offsetWidth;
+
+    screen.classList.add(
+        "screen-flash"
+    );
+
+}
+
+
+/* =========================================================
+   CONTRADICTION ENGINE
+   ========================================================= */
+
+function detectContradictions(){
+
+    const selected=
+        board
+        .map(
+            (item,index)=>
+                tileState[index]!==null
+                ? item.t
+                : null
+        )
+        .filter(Boolean);
+
+
+    const pairs=[
+
+        [
+            "NO ONE WANTS TO WORK",
+            "JUST WORK HARDER"
+        ],
+
+        [
+            "JUST BUY A HOUSE",
+            "RENTING IS THROWING MONEY AWAY"
+        ],
+
+        [
+            "WORK FROM HOME ISN'T REAL WORK",
+            "JUST QUIT YOUR JOB"
+        ],
+
+        [
+            "SOCIAL MEDIA IS RUINING EVERYTHING",
+            "FACEBOOK IS THE NEWS"
+        ],
+
+        [
+            "KIDS ARE TOO SENSITIVE",
+            "MY GENERATION NEVER COMPLAINED"
+        ],
+
+        [
+            "KIDS TODAY HAVE IT EASY",
+            "MY HOUSE COST $35K"
+        ],
+
+        [
+            "NEW TECH IS MAKING US DUMB",
+            "I DON'T NEED A PASSWORD MANAGER"
+        ]
+
+    ];
+
+
+    let found=0;
+
+
+    pairs.forEach(
+        pair=>{
+
+            if(
+                selected.includes(pair[0]) &&
+                selected.includes(pair[1])
+            ){
+
+                found++;
+
+            }
+
+        }
+    );
+
+
+    if(
+        found>contradictions
+    ){
+
+        contradictions=
+            found;
+
+
+        showResponse(
+            "💥",
+            "BOOMER LOGIC ERROR #404: contradictory takes detected in the same argument!",
+            true
+        );
+
+
+        beep(120,.18);
+
+        vibrate(
+            [80,50,80]
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   BINGO
+   ========================================================= */
+
+function checkBingo(){
+
+    const lines=[
+
+        [0,1,2,3,4],
+        [5,6,7,8,9],
+        [10,11,12,13,14],
+        [15,16,17,18,19],
+        [20,21,22,23,24],
+
+        [0,5,10,15,20],
+        [1,6,11,16,21],
+        [2,7,12,17,22],
+        [3,8,13,18,23],
+        [4,9,14,19,24],
+
+        [0,6,12,18,24],
+        [4,8,12,16,20]
+
+    ];
+
+
+    for(
+        const line of lines
+    ){
+
+        if(
+            !line.every(
+                i=>
+                    tileState[i]!==null
+            )
+        ){
+
+            continue;
+
+        }
+
+
+        const normal=
+            line.filter(
+                i=>i!==12
+            );
+
+
+        const first=
+            tileState[
+                normal[0]
+            ];
+
+
+        if(
+            normal.every(
+                i=>
+                    tileState[i]===first
+            )
+        ){
+
+            gameOver=true;
+
+
+            if(
+                first==="boomer"
+            ){
+
+                showEnding(
+                    "boomerBingo"
+                );
+
+            }else{
+
+                showEnding(
+                    "realityBingo"
+                );
+
+            }
+
+
+            return true;
+
+        }
+
+    }
+
+
+    return false;
+
+}
+
+
+/* =========================================================
+   SPECIAL METER ENDINGS
+   ========================================================= */
+
+function checkSpecialEnding(){
+
+    if(gameOver)return true;
+
+
+    if(
+        meter>=12
+    ){
+
+        gameOver=true;
+
+        showEnding(
+            "boomerMeter"
+        );
+
+        return true;
+
+    }
+
+
+    if(
+        meter<=-12
+    ){
+
+        gameOver=true;
+
+        showEnding(
+            "realityMeter"
+        );
+
+        return true;
+
+    }
+
+
+    return false;
+
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+function updateStats(){
+
+    document.getElementById(
+        "statBoomer"
+    ).textContent=boomer;
+
+
+    document.getElementById(
+        "statReality"
+    ).textContent=reality;
+
+
+    document.getElementById(
+        "statDay"
+    ).textContent=dayCount;
+
+
+    document.getElementById(
+        "statBoot"
+    ).textContent=bootstraps;
+
+
+    document.getElementById(
+        "statHouse"
+    ).textContent=
+        Math.min(
+            100,
+            housing*14
+        )+"%";
+
+
+    document.getElementById(
+        "statWage"
+    ).textContent=
+        Math.min(
+            100,
+            wage
+        )+"%";
+
+
+    document.getElementById(
+        "statOffice"
+    ).textContent=office;
+
+
+    document.getElementById(
+        "statContradictions"
+    ).textContent=
+        contradictions;
+
+
+    const max=12;
+
+
+    const left=
+        Math.min(
+            50,
+            Math.abs(
+                Math.min(0,meter)
+            )/max*50
+        );
+
+
+    const right=
+        Math.min(
+            50,
+            Math.max(0,meter)
+            /max*50
+        );
+
+
+    document.getElementById(
+        "meterLeft"
+    ).style.width=
+        left+"%";
+
+
+    document.getElementById(
+        "meterRight"
+    ).style.width=
+        right+"%";
+
+
+    const rage=
+        totalAnswers
+        ? Math.round(
+            boomer/
+            totalAnswers*
+            100
+        )
+        : 0;
+
+
+    document.getElementById(
+        "ragePercent"
+    ).textContent=
+        rage+"%";
+
+}
+
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+function loadQuiz(){
+
+    const question=
+        QUIZ[quizIndex];
+
+
+    document.getElementById(
+        "quizQuestion"
+    ).textContent=
+        question.q;
+
+
+    document.getElementById(
+        "quizScore"
+    ).textContent=
+        "QUESTION "+
+        (quizIndex+1)+
+        "/"+
+        QUIZ.length;
+
+
+    const options=
+        document.getElementById(
+            "quizOptions"
+        );
+
+
+    options.innerHTML="";
+
+
+    shuffle(
+        question.a
+    ).forEach(
+        option=>{
+
+            const button=
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className=
+                "quiz-button";
+
+
+            button.textContent=
+                option[0];
+
+
+            button.onclick=
+                ()=>{
+                    answerQuiz(
+                        option[1]
+                    );
+                };
+
+
+            options.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   QUIZ ANSWER
+   ========================================================= */
+
+function answerQuiz(
+    isBoomer
+){
+
+    if(gameOver)return;
+
+
+    const question=
+        QUIZ[quizIndex];
+
+
+    totalAnswers++;
+
+
+    if(isBoomer){
+
+        boomer++;
+
+        meter++;
+
+        dayCount++;
+
+        bootstraps++;
+
+
+        showResponse(
+            "👴",
+            question.e+
+            " STATUS: BOOMER LOGIC LOGGED.",
+            true
+        );
+
+
+        beep(240,.1);
+
+    }else{
+
+        reality++;
+
+        meter--;
+
+
+        showResponse(
+            "🧠",
+            question.e+
+            " STATUS: REALITY CHECK PASSED.",
+            false
+        );
+
+
+        beep(850,.08);
+
+    }
+
+
+    updateStats();
+
+
+    if(
+        checkSpecialEnding()
+    ){
+
+        return;
+
+    }
+
+
+    quizIndex=
+        (quizIndex+1)
+        %
+        QUIZ.length;
+
+
+    loadQuiz();
+
+}
+
+
+/* =========================================================
+   ENDINGS
+   ========================================================= */
+
+function showEnding(
+    type
+){
+
+    let icon="👴";
+    let title="";
+    let sub="";
+    let quote="";
+
+
+    if(
+        type==="boomerBingo"
+    ){
+
+        icon="👴";
+
+        title=
+            "OK BOOMER BINGO!";
+
+        sub=
+            "YOU COMPLETED A FULL LINE OF CERTIFIED BOOMER TAKES.";
+
+        quote=
+            "Congratulations. You have successfully explained the modern economy using conditions from approximately 1983.";
+
+    }
+
+
+    else if(
+        type==="realityBingo"
+    ){
+
+        icon="🧠";
+
+        title=
+            "GENERATIONAL REALITY BINGO!";
+
+        sub=
+            "YOU SURVIVED THE BOOMER ARGUMENT SIMULATOR.";
+
+        quote=
+            "Achievement unlocked: understanding that different generations can have completely different economic starting points.";
+
+    }
+
+
+    else if(
+        type==="boomerMeter"
+    ){
+
+        icon="📘";
+
+        title=
+            "FACEBOOK UNIVERSITY GRADUATE";
+
+        sub=
+            "BOOMER DELUSION HAS REACHED MAXIMUM CAPACITY.";
+
+        quote=
+            "Your dissertation argues that every problem can be solved by working harder, buying a house in 1981 and turning off the lights.";
+
+    }
+
+
+    else if(
+        type==="realityMeter"
+    ){
+
+        icon="🧠";
+
+        title=
+            "BOOMER REALITY CHECK MAXED!";
+
+        sub=
+            "CONTEXT HAS SUCCESSFULLY ENTERED THE ARGUMENT.";
+
+        quote=
+            "You have introduced wages, housing prices, inflation, healthcare and childcare into a conversation that desperately wanted to avoid them.";
+
+    }
+
+
+    else{
+
+        icon="🤖";
+
+        title=
+            "BOOMER TAKE BUTTON-PUSHER NPC";
+
+        sub=
+            "YOU EVALUATED THE ENTIRE BOARD WITHOUT STOPPING.";
+
+        quote=
+            "You have successfully processed every take. HR has determined that you are now the person everyone sends screenshots to.";
+
+    }
+
+
+    document.getElementById(
+        "modalIcon"
+    ).textContent=icon;
+
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent=title;
+
+
+    document.getElementById(
+        "modalSub"
+    ).textContent=sub;
+
+
+    document.getElementById(
+        "modalQuote"
+    ).textContent=quote;
+
+
+    const rank=
+
+        boomer>=20
+        ? "CERTIFIED BOOMER MAXXER"
+
+        : boomer>=12
+        ? "FACEBOOK UNIVERSITY ALUMNI"
+
+        : reality>=18
+        ? "GENERATIONAL REALITY CHECKER"
+
+        : "GENERATIONAL NPC";
+
+
+    const dominant=
+        boomer>=reality
+        ? "BOOMER TAKE MAXXER"
+        : "REALITY CHECKER";
+
+
+    document.getElementById(
+        "finalStats"
+    ).innerHTML=`
+
+        <div class="final-row">
+            <span>
+                BOOMER TAKES ACCEPTED
+            </span>
+            <span>
+                ${boomer}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                REALITY CHECKS DEPLOYED
+            </span>
+            <span>
+                ${reality}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                BACK-IN-MY-DAY STORIES
+            </span>
+            <span>
+                ${dayCount}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                BOOTSTRAPS DEPLOYED
+            </span>
+            <span>
+                ${bootstraps}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                HOUSING AMNESIA
+            </span>
+            <span>
+                ${Math.min(
+                    100,
+                    housing*14
+                )}%
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                WAGE IGNORANCE
+            </span>
+            <span>
+                ${Math.min(
+                    100,
+                    wage
+                )}%
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                OFFICE LOYALTY
+            </span>
+            <span>
+                ${office}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                CONTRADICTIONS DETECTED
+            </span>
+            <span>
+                ${contradictions}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                FINAL GENERATIONAL RANK
+            </span>
+            <span>
+                ${rank}
+            </span>
+        </div>
+
+        <div class="final-row">
+            <span>
+                DOMINANT ENERGY
+            </span>
+            <span>
+                ${dominant}
+            </span>
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "modal"
+    ).style.display="flex";
+
+
+    vibrate(
+        [200,100,200]
+    );
+
+
+    beep(900,.15);
+
+
+    setTimeout(
+        ()=>{
+            speak(title);
+        },
+        100
+    );
+
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+function closeModal(){
+
+    document.getElementById(
+        "modal"
+    ).style.display="none";
+
+}
+
+
+/* =========================================================
+   SHARE
+   ========================================================= */
+
+async function shareGame(){
+
+    const data={
+
+        title:
+            "BOOMER MINDSET BINGO MAXXING",
+
+        text:
+            "I just played BOOMER MINDSET BINGO MAXXING. Can you survive the Boomer Logic Test?",
+
+        url:
+            window.location.href
+
+    };
+
+
+    try{
+
+        if(
+            navigator.share
+        ){
+
+            await navigator.share(
+                data
+            );
+
+        }else{
+
+            await navigator.clipboard.writeText(
+                window.location.href
+            );
+
+            alert(
+                "Game link copied!"
+            );
+
+        }
+
+    }catch(e){}
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+function resetGame(){
+
+    if(
+        confirm(
+            "Reset the entire Boomer Reality Check?"
+        )
+    ){
+
+        newGame();
+
+    }
+
+}
+
+
+/* =========================================================
+   PHYSICAL TV KNOBS
+   ========================================================= */
+
+function knobSound(){
+
+    beep(180,.04);
+
+    setTimeout(
+        ()=>{
+            beep(260,.04);
+        },
+        60
+    );
+
+}
+
+
+function changeChannel(){
+
+    beep(100,.04);
+
+    setTimeout(
+        ()=>{
+            beep(600,.06);
+        },
+        60
+    );
+
+    const screen=
+        document.querySelector(
+            ".crt-screen"
+        );
+
+    screen.style.filter=
+        "brightness(2)";
+
+    setTimeout(
+        ()=>{
+            screen.style.filter="";
+        },
+        100
+    );
+
+}
+
+
+function tuningEffect(){
+
+    const screen=
+        document.querySelector(
+            ".crt-screen"
+        );
+
+    screen.style.filter=
+        "contrast(1.8) brightness(1.6)";
+
+    beep(120,.08);
+
+    setTimeout(
+        ()=>{
+            screen.style.filter="";
+        },
+        140
+    );
+
+}
+
+
+/* =========================================================
+   START GAME
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+        newGame();
+    }
+);
+
+</script>
+
+</body>
+</html>      border: 10px solid var(--tv-casing);
       border-radius: 20px;
       padding: 10px;
       box-shadow: 0 0 40px rgba(0,0,0,0.9), inset 0 0 15px rgba(0,0,0,0.8);
